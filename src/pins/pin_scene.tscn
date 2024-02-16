@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://caegekivcjox2"]
+
+[ext_resource type="Script" path="res://src/pins/PinScene.gd" id="1_pmyxw"]
+
+[node name="PinScene" type="Node2D"]
+script = ExtResource("1_pmyxw")
+
+[node name="Pins" type="Node2D" parent="."]

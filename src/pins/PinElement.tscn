@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl5sqhkwc4w3g"]
+
+[ext_resource type="Texture2D" uid="uid://cl7t8sxh74rr4" path="res://assets/drawing-pin-151658_1280.webp" id="1_oo0yy"]
+[ext_resource type="Script" path="res://src/pins/PinElement.gd" id="2_aav2d"]
+
+[node name="PinImage" type="Sprite2D"]
+position = Vector2(120, 104)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_oo0yy")
+script = ExtResource("2_aav2d")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(562.5, -425, 350, -612.5, 137.5, -612.5, 75, -425, -187.5, -212.5, -362.5, -200, -337.5, 175, -675, 587.5, -175, 387.5, 87.5, 400, 150, 150, 362.5, 12.5, 625, -175)
