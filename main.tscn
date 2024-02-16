@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp7df0oetlxv5"]
-
-[ext_resource type="PackedScene" uid="uid://csdrhyfs6fnad" path="res://src/tests/fooabr.tscn" id="1_teivg"]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="foobar" parent="." instance=ExtResource("1_teivg")]

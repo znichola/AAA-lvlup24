@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu7in63c5fakf"]
+
+[ext_resource type="Texture2D" uid="uid://br8djqpybaap" path="res://icon.svg" id="1_jtqyx"]
+[ext_resource type="Script" path="res://src/robo/robo.gd" id="1_qliax"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pwqsj"]
+
+[node name="Chara (Undertale reference??)" type="CharacterBody2D"]
+script = ExtResource("1_qliax")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jtqyx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_pwqsj")
