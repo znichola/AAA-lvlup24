@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://c33h5d1t1wcwk"]
 
-[ext_resource type="Texture2D" uid="uid://ujktoeg31pfh" path="res://itemm.png" id="1_4qbu2"]
-[ext_resource type="Script" path="res://src/item.gd" id="2_o1cpg"]
+[ext_resource type="Texture2D" uid="uid://ujktoeg31pfh" path="res://assets/share/itemm.png" id="1_apui3"]
+[ext_resource type="Script" path="res://src/agent_terrain/item.gd" id="2_o1cpg"]
 
 [node name="Sprite2D" type="Sprite2D"]
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_4qbu2")
+texture = ExtResource("1_apui3")
 script = ExtResource("2_o1cpg")
 
 [node name="Timer" type="Timer" parent="."]

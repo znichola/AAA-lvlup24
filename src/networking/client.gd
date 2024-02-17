@@ -3,7 +3,7 @@ extends Node
 signal api_data_received(property: String, data)
 
 # The URL we will connect to.
-var websocket_url = "ws://10.177.34.146:9080"
+var websocket_url = "ws://10.177.34.145"
 var socket := WebSocketPeer.new()
 
 var connectionEstablished = false

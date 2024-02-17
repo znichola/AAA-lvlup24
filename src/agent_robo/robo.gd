@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 @onready var axis = Vector2.ZERO
 
-var item = preload("res://src/item.tscn")
+var item = preload("res://src/agent_terrain/item.tscn")
 
 func _physics_process(delta):
 	move(delta)

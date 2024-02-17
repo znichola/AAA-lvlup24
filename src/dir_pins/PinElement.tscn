@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl5sqhkwc4w3g"]
 
-[ext_resource type="Texture2D" uid="uid://cl7t8sxh74rr4" path="res://assets/drawing-pin-151658_1280.webp" id="1_oo0yy"]
-[ext_resource type="Script" path="res://src/pins/PinElement.gd" id="2_aav2d"]
+[ext_resource type="Texture2D" uid="uid://cl7t8sxh74rr4" path="res://assets/dir/drawing-pin-151658_1280.webp" id="1_oo0yy"]
+[ext_resource type="Script" path="res://src/dir_pins/PinElement.gd" id="2_aav2d"]
 
 [node name="PinImage" type="Sprite2D"]
 position = Vector2(120, 104)

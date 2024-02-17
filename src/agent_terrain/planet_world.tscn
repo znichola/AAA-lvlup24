@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7ivcx6esptyt"]
 
-[ext_resource type="PackedScene" uid="uid://bu7in63c5fakf" path="res://src/robo/robo.tscn" id="1_n0aox"]
-[ext_resource type="PackedScene" uid="uid://c33h5d1t1wcwk" path="res://src/item.tscn" id="2_bxbkh"]
+[ext_resource type="PackedScene" uid="uid://bu7in63c5fakf" path="res://src/agent_robo/robo.tscn" id="1_ok4l4"]
+[ext_resource type="PackedScene" uid="uid://c33h5d1t1wcwk" path="res://src/agent_terrain/item.tscn" id="2_kt22t"]
 
 [node name="world" type="Node2D"]
 
-[node name="Chara (Undertale reference??)" parent="." instance=ExtResource("1_n0aox")]
+[node name="Chara (Undertale reference??)" parent="." instance=ExtResource("1_ok4l4")]
 position = Vector2(427, 429)
 
 [node name="Camera2D" type="Camera2D" parent="Chara (Undertale reference??)"]
 
-[node name="Item" parent="Chara (Undertale reference??)" instance=ExtResource("2_bxbkh")]
+[node name="Item" parent="Chara (Undertale reference??)" instance=ExtResource("2_kt22t")]
 position = Vector2(20, 20)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
