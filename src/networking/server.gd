@@ -12,7 +12,7 @@ func _ready():
 	if tcp_server.listen(PORT) != OK:
 		Global.log_message("Unable to start server.")
 		set_process(false)
-
+	print("srver started with success")
 
 func _process(_delta):
 	#Block while connecting? 
@@ -20,10 +20,13 @@ func _process(_delta):
 		var conn: StreamPeerTCP = tcp_server.take_connection()
 		assert(conn != null)
 		socket.accept_stream(conn)
-
+		print("trying to accept connection from:", conn)
 	socket.poll()
-
+		
+	#print("slkjdflksdj", WebSocketPeer.STATE_OPEN)
+	
 	if socket.get_ready_state() == WebSocketPeer.STATE_OPEN:
+		print("sdlkfjlksdjfklsdjklf")
 		while socket.get_available_packet_count():
 			#Global.log_message(socket.get_packet().get_string_from_ascii())
 			var packet = socket.get_packet() 
