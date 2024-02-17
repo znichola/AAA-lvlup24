@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg2eocn0aoog1"]
+[gd_scene load_steps=8 format=3 uid="uid://cg2eocn0aoog1"]
 
 [ext_resource type="Script" path="res://src/agent/agent.gd" id="1_h7mfl"]
 [ext_resource type="Script" path="res://src/networking/client.gd" id="1_p0f3u"]
 [ext_resource type="PackedScene" uid="uid://b7ivcx6esptyt" path="res://src/agent_terrain/planet_world.tscn" id="2_ai3rw"]
 [ext_resource type="Texture2D" uid="uid://b0awe1kjsi4qc" path="res://assets/agent/robot_interface_background.png" id="2_d3u4v"]
 [ext_resource type="Shader" path="res://assets/share/start.gdshader" id="5_xlaie"]
+[ext_resource type="Texture2D" uid="uid://ob22n4qlngu" path="res://assets/agent/spritesheet.png" id="6_08ksw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3u47k"]
 shader = ExtResource("5_xlaie")
@@ -106,6 +107,12 @@ size = Vector2i(800, 800)
 render_target_update_mode = 4
 
 [node name="world" parent="UI/AgentViewportContainer/SubViewport" instance=ExtResource("2_ai3rw")]
+
+[node name="Spritesheet" type="Sprite2D" parent="."]
+position = Vector2(343, 334)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6_08ksw")
+hframes = 3
 
 [node name="Shader" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_3u47k")

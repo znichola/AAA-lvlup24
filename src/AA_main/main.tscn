@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxaa046x45suv"]
+[gd_scene load_steps=3 format=3 uid="uid://cxaa046x45suv"]
 
 [ext_resource type="Script" path="res://src/AA_main/main.gd" id="1_drmfp"]
+[ext_resource type="Texture2D" uid="uid://pfs5hqcsj1or" path="res://assets/share/title_screen_concept.png" id="2_1yluc"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_drmfp")
@@ -82,6 +83,10 @@ layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 scroll_following = true
+
+[node name="TitleScreenConcept" type="Sprite2D" parent="."]
+position = Vector2(533, 353)
+texture = ExtResource("2_1yluc")
 
 [connection signal="pressed" from="Control/HBoxContainer/ServerContainer/DirectorBtn" to="." method="_on_director_btn_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/ClientContainer/AgentBtn" to="." method="_on_agent_btn_pressed"]
