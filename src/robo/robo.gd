@@ -7,13 +7,14 @@ extends CharacterBody2D
 
 @onready var axis = Vector2.ZERO
 
+var item = preload("res://src/item.tscn")
 
 func _physics_process(delta):
 	move(delta)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("space"):
-		pass
+		$Hands.add_child(item.instantiate())
 
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
