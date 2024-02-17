@@ -1,10 +1,11 @@
 extends Node
 
+signal api_move_from_character(pos: Vector2)
+
 # The port we will listen to.
 const PORT = 9080
 var tcp_server := TCPServer.new()
 var socket := WebSocketPeer.new()
-
 
 func log_message(message):
 	var time = "%s" % Time.get_time_string_from_system()

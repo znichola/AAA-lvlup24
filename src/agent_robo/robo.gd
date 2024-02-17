@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-signal api_moved
+signal api_move
 
 @export var MAX_SPEED = 400
 @export var ACCELERATION = 1500
@@ -25,7 +25,12 @@ func interact():
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 	axis.y = int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up"))
-	api_moved.emit()
+	# we do this check to not spam the server with updates, only on release
+	if (Input.is_action_just_released("down")
+		or Input.is_action_just_released("up")
+		or Input.is_action_just_released("left")
+		or Input.is_action_just_released("right")):
+		api_move.emit()
 	return axis.normalized()
 
 func move(delta):

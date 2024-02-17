@@ -1,11 +1,12 @@
-extends Sprite2D
+extends Node2D
 
-@export var ID = "def"
+signal api_move(pos: Vector2)
+
+@onready var chara = $"Chara"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.start() # Replace with function body.
-	$RichTextLabel.text = ID
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,5 +14,5 @@ func _process(_delta):
 	pass
 
 
-func _on_timer_timeout():
-	queue_free() # Replace with function body.
+func _on_chara_api_move():
+	api_move.emit(chara.position)
