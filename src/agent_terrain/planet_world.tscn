@@ -1,22 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7ivcx6esptyt"]
+[gd_scene load_steps=5 format=3 uid="uid://b7ivcx6esptyt"]
 
+[ext_resource type="Script" path="res://src/agent_terrain/planet_world.gd" id="1_dh7fl"]
 [ext_resource type="PackedScene" uid="uid://bu7in63c5fakf" path="res://src/agent_robo/robo.tscn" id="1_ok4l4"]
 [ext_resource type="Texture2D" uid="uid://dbpxqj6hwdlb6" path="res://assets/agent/terrain.png" id="1_y2t65"]
 [ext_resource type="PackedScene" uid="uid://c33h5d1t1wcwk" path="res://src/agent_terrain/item.tscn" id="2_kt22t"]
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_dh7fl")
 
 [node name="Terrain" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
 texture = ExtResource("1_y2t65")
 
-[node name="Chara (Undertale reference??)" parent="." instance=ExtResource("1_ok4l4")]
+[node name="Chara" parent="." instance=ExtResource("1_ok4l4")]
 position = Vector2(-202, 438)
 MAX_SPEED = 800
 ACCELERATION = 500
 FRICTION = 3000
 
-[node name="Camera2D" type="Camera2D" parent="Chara (Undertale reference??)"]
+[node name="Camera2D" type="Camera2D" parent="Chara"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -25,3 +27,5 @@ polygon = PackedVector2Array(-670, 491, -1632, -1789, -2081, -1848, -1888, -1446
 
 [node name="Item" parent="." instance=ExtResource("2_kt22t")]
 position = Vector2(196, 356)
+
+[connection signal="api_move" from="Chara" to="." method="_on_chara_api_move"]

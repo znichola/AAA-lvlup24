@@ -2,16 +2,21 @@ extends Node2D
 
 @onready var client_net = $Networking
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	print("url used:<", Global.host_ip, ">")
-	if !client_net.api_establish_connection():
-		#get_tree().change_scene_to_file("res://src/AA_main/main.tscn")
-		print("failed to connect to this server, returning to menu")
+var pos_data_to_transfer = null
 
+func _process(_delta):
+	if pos_data_to_transfer != null:
+		client_net.api_send_data("robot-pos", pos_data_to_transfer)
+		pos_data_to_transfer = null
 
 func _on_world_api_move(pos):
 	print("got new position update from chara")
 	if client_net.socket.get_ready_state() == WebSocketPeer.STATE_OPEN:
 		print("sent update over the wire")
-		client_net.api_send_data("position", pos)
+		pos_data_to_transfer = pos
+		#client_net.api_send_data("position", pos)
+
+
+func _on_send_ping_btn_button_down():
+	client_net.api_send_data()
+	#client_net.api_send_data("position", pos)

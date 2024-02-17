@@ -2,11 +2,12 @@ extends Node
 
 var host_ip = ""
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func log_message(message):
+	var time = "%s" % Time.get_time_string_from_system()
+	print(time + " : " + message)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+func log_vet_message(data : PackedByteArray):
+	var time = "%s" % Time.get_time_string_from_system()
+	var d = bytes_to_var(data)
+	print(time, ":", d)
+	#print(time + " : " + d[0] + "-" + d[1])

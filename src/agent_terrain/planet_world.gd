@@ -16,3 +16,4 @@ func _process(_delta):
 
 func _on_chara_api_move():
 	api_move.emit(chara.position)
+
