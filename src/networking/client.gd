@@ -9,13 +9,9 @@ var socket := WebSocketPeer.new()
 var connectionEstablished = false
 
 
-func _ready():
-	websocket_url = "ws://" + Global.host_ip
-
-
 func log_message(message):
 	var time = "%s" % Time.get_time_string_from_system()
-	print(time + message + "\n")
+	print(time + " : " + message + "\n")
 
 
 func _process(_delta):
@@ -51,6 +47,9 @@ func api_send_data(property,data):
 
 
 func api_establish_connection():
+	websocket_url = "ws://" + Global.host_ip
+	print("using url", websocket_url)
+	print("<", Global.host_ip, ">")
 	if socket.connect_to_url(websocket_url) != OK:
 		log_message("Unable to connect.")
 		#get_tree().change_scene_to_file("res://src/AA_main/main.tscn")

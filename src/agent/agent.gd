@@ -4,6 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("url used:<", Global.host_ip, ">")
 	if !net.api_establish_connection():
 		#get_tree().change_scene_to_file("res://src/AA_main/main.tscn")
 		print("failed to connect to this server, returning to menu")

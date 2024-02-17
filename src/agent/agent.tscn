@@ -86,4 +86,3 @@ render_target_update_mode = 4
 [node name="world" parent="UI/AgentViewportContainer/SubViewport" instance=ExtResource("2_ai3rw")]
 
 [connection signal="api_data_received" from="Networking" to="." method="_on_networking_api_data_received"]
-[connection signal="api_move" from="UI/AgentViewportContainer/SubViewport/world" to="." method="_on_world_api_move"]
