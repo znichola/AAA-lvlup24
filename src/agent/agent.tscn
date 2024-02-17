@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg2eocn0aoog1"]
+
+[ext_resource type="Script" path="res://src/networking/client.gd" id="1_p0f3u"]
+
+[node name="Agent" type="Node2D"]
+script = ExtResource("1_p0f3u")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(57, -9)
+polygon = PackedVector2Array(244, 113, 212, 522, 266, 598, 934, 588, 1000, 538, 1010, 143, 951, 80, 278, 53)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(22, -32)
+polygon = PackedVector2Array(44, 181, 32, 535, 135, 567, 192, 130, 68, 86)
