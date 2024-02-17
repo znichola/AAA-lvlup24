@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://580ak3ggwex5"]
+
+[node name="Radar" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0.376471)
+polygon = PackedVector2Array(0, 317, 62, 78, 300, 0, 534, 86, 601, 318, 526, 544, 301, 602, 51, 547)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 188.0
+offset_top = 284.0
+offset_right = 475.0
+offset_bottom = 371.0
+text = "radar screen"

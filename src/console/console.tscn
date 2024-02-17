@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://tbxa5sx42wi4"]
+
+[node name="Console" type="Node2D"]
+
+[node name="buttons-rough" type="Polygon2D" parent="."]
+position = Vector2(-45, 321)
+color = Color(1, 1, 1, 0.392157)
+polygon = PackedVector2Array(65, -293, 60, -6, 298, -20, 538, -6, 529, -294, 286, -303)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 94.0
+offset_top = 147.0
+offset_right = 471.0
+offset_bottom = 191.0
+text = "console with some stats displayed as text and some other cool computer stuff as well"
+metadata/_edit_use_anchors_ = true
