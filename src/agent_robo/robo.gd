@@ -6,6 +6,8 @@ signal api_moved
 @export var ACCELERATION = 1500
 @export var FRICTION = 1500
 
+@export var INVENTORY = ["bop", "bap", "ding", "pow"]
+
 @onready var axis = Vector2.ZERO
 
 var item = preload("res://src/agent_terrain/item.tscn")
@@ -15,7 +17,10 @@ func _physics_process(delta):
 
 func _process(_delta):
 	if Input.is_action_just_pressed("space"):
-		$Hands.add_child(item.instantiate())
+		interact()
+
+func interact():
+	pass
 
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))

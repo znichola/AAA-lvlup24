@@ -1,19 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7ivcx6esptyt"]
+[gd_scene load_steps=4 format=3 uid="uid://b7ivcx6esptyt"]
 
 [ext_resource type="PackedScene" uid="uid://bu7in63c5fakf" path="res://src/agent_robo/robo.tscn" id="1_ok4l4"]
+[ext_resource type="Texture2D" uid="uid://dbpxqj6hwdlb6" path="res://assets/agent/terrain.png" id="1_y2t65"]
 [ext_resource type="PackedScene" uid="uid://c33h5d1t1wcwk" path="res://src/agent_terrain/item.tscn" id="2_kt22t"]
 
 [node name="world" type="Node2D"]
 
+[node name="Terrain" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_y2t65")
+
 [node name="Chara (Undertale reference??)" parent="." instance=ExtResource("1_ok4l4")]
-position = Vector2(427, 429)
+position = Vector2(-202, 438)
+MAX_SPEED = 800
+ACCELERATION = 500
+FRICTION = 3000
 
 [node name="Camera2D" type="Camera2D" parent="Chara (Undertale reference??)"]
-
-[node name="Item" parent="Chara (Undertale reference??)" instance=ExtResource("2_kt22t")]
-position = Vector2(20, 20)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-2, 3, 166, 312, 464, 263, 562, 367, 714, 402, 671, 242, 552, 139, 258, 125, 260, 7)
+polygon = PackedVector2Array(-670, 491, -1632, -1789, -2081, -1848, -1888, -1446, -3924, -549, -4061, -686, -4561, -744, -4645, -997, -4934, -1154, -4900, -1443, -4954, -1562, -5761, -2355, -5710, -2832, -4013, -3852, -3653, -3892, -3297, -3843, -3150, -3629, -3092, -3344, -2670, -3044, -2511, -3290, -1922, -3235, -1076, -3213, -784, -2983, -605, -2294, 1524, -2904, 1401, -1262, 1081, -938, 824, -793, 562, -168, 347, -112, 257, 122)
+
+[node name="Item" parent="." instance=ExtResource("2_kt22t")]
+position = Vector2(196, 356)

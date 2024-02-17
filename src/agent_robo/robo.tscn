@@ -1,18 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://bu7in63c5fakf"]
 
 [ext_resource type="Script" path="res://src/agent_robo/robo.gd" id="1_x2uf8"]
-[ext_resource type="Texture2D" uid="uid://br8djqpybaap" path="res://assets/agent/icon.svg" id="2_ugmte"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pwqsj"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntt6p"]
+
 [node name="Chara (Undertale reference??)" type="CharacterBody2D"]
 script = ExtResource("1_x2uf8")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ugmte")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_pwqsj")
 
 [node name="Hands" type="Node2D" parent="."]
+
+[node name="Zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone"]
+scale = Vector2(20, 20)
+shape = SubResource("CircleShape2D_ntt6p")
