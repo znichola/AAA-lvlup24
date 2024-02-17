@@ -9,4 +9,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#if get_local_mouse_position().length() > 400:
-	position = get_local_mouse_position()
+	#position = get_local_mouse_position()
+	pass
