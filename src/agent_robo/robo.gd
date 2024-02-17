@@ -61,6 +61,5 @@ func _on_zone_area_entered(area):
 		print(INVENTORY)
 		area.get_parent().queue_free()
 	elif t == "drop":
-		print("DROP THAT")
-
-
+		INVENTORY[0] = null
+		print(INVENTORY)
