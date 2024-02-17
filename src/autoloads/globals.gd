@@ -1,6 +1,8 @@
 extends Node
 
 var host_ip = ""
+static var IDs = ["Scrap", "CPU", "Old Fan", "Memory Bank", "SLK-655"]
+
 
 func log_message(message):
 	var time = "%s" % Time.get_time_string_from_system()

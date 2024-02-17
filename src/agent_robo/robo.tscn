@@ -6,17 +6,18 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ntt6p"]
 
-[node name="Chara (Undertale reference??)" type="CharacterBody2D"]
+[node name="Chara" type="CharacterBody2D"]
 script = ExtResource("1_x2uf8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_pwqsj")
-
-[node name="Hands" type="Node2D" parent="."]
+debug_color = Color(0.941176, 0, 0.607843, 0.560784)
 
 [node name="Zone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zone"]
 scale = Vector2(20, 20)
 shape = SubResource("CircleShape2D_ntt6p")
+
+[connection signal="area_entered" from="Zone" to="." method="_on_zone_area_entered"]

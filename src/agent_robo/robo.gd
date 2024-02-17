@@ -6,7 +6,7 @@ signal api_move
 @export var ACCELERATION = 1500
 @export var FRICTION = 1500
 
-@export var INVENTORY = ["bop", "bap", "ding", "pow"]
+@export var INVENTORY = ["empty", 0, "empty", null]
 
 @onready var axis = Vector2.ZERO
 
@@ -52,3 +52,14 @@ func apply_friction(fricc):
 func apply_movement(accel):
 	velocity += accel
 	velocity = velocity.limit_length(MAX_SPEED)
+
+
+func _on_zone_area_entered(area):
+	var t = area.InteractionType
+	if t == "item":
+		INVENTORY[0] = area.get_parent().ID
+		print(INVENTORY)
+		area.get_parent().queue_free()
+	elif t == "drop":
+		INVENTORY[0] = null
+		print(INVENTORY)

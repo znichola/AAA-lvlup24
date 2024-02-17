@@ -9,5 +9,5 @@ func _ready():
 
 func api_ping_player_pos(pos : Vector2):
 	var new_ping = radar_ping.instantiate()
-	new_ping.position = pos * 0.04
+	new_ping.position = pos * 0.02
 	pings_store.add_child(new_ping)
