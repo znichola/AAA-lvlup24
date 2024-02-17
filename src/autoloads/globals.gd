@@ -1,6 +1,8 @@
 extends Node
 
 var host_ip = ""
+static var IDs = ["Scrap", "CPU", "Old Fan", "Memory Bank", "SLK-655"]
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

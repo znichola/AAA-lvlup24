@@ -1,7 +1,6 @@
 extends Sprite2D
 
-@export var ID = "def"
-
+@export var ID = "Scrap"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.start() # Replace with function body.

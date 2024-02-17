@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7ivcx6esptyt"]
+[gd_scene load_steps=7 format=3 uid="uid://b7ivcx6esptyt"]
 
 [ext_resource type="PackedScene" uid="uid://bu7in63c5fakf" path="res://src/agent_robo/robo.tscn" id="1_ok4l4"]
 [ext_resource type="Texture2D" uid="uid://dbpxqj6hwdlb6" path="res://assets/agent/terrain.png" id="1_y2t65"]
 [ext_resource type="PackedScene" uid="uid://c33h5d1t1wcwk" path="res://src/agent_terrain/item.tscn" id="2_kt22t"]
+[ext_resource type="Texture2D" uid="uid://br8djqpybaap" path="res://assets/agent/icon.svg" id="2_qm220"]
 [ext_resource type="PackedScene" uid="uid://b7e55fw2xrssd" path="res://src/agent_robo/interact_area.tscn" id="3_ccj50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_disy3"]
@@ -18,7 +19,11 @@ FRICTION = 3000
 
 [node name="Camera2D" type="Camera2D" parent="Chara"]
 
+[node name="Sprite2D" type="Sprite2D" parent="Chara"]
+texture = ExtResource("2_qm220")
+
 [node name="Terrain" type="Sprite2D" parent="."]
+z_index = -50
 scale = Vector2(5, 5)
 texture = ExtResource("1_y2t65")
 
@@ -46,9 +51,10 @@ polygon = PackedVector2Array(-7, 2615, 420, 4612, 624, 4762, 1543, 4162, 1651, 3
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Terrain/Walls"]
 polygon = PackedVector2Array(2448, 1411, 2621, 1378, 2868, 1042, 2885, 908, 3055, 680, 3180, 415, 3709, 328, 5203, -933, 3697, -2770, 1743, -2944, 1461, 262, 1862, 745, 1870, 908, 1923, 1072, 2137, 1188, 2213, 1319)
 
-[node name="InteractArea" parent="Terrain" instance=ExtResource("3_ccj50")]
+[node name="Central" parent="Terrain" instance=ExtResource("3_ccj50")]
+InteractionType = "drop"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/InteractArea"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/Central"]
 position = Vector2(208.4, 257.4)
 rotation = -0.279253
 scale = Vector2(4, 8)
@@ -56,3 +62,4 @@ shape = SubResource("RectangleShape2D_disy3")
 
 [node name="Item" parent="." instance=ExtResource("2_kt22t")]
 position = Vector2(196, 356)
+ID = "Memory Bank"

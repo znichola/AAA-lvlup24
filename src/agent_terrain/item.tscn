@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ujktoeg31pfh" path="res://assets/share/itemm.png" id="1_apui3"]
 [ext_resource type="Script" path="res://src/agent_terrain/item.gd" id="2_o1cpg"]
-[ext_resource type="PackedScene" uid="uid://b7e55fw2xrssd" path="res://src/agent_robo/interact_area.tscn" id="3_qrdcv"]
+[ext_resource type="PackedScene" uid="uid://b7e55fw2xrssd" path="res://src/agent_robo/interact_area.tscn" id="3_c67tk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjmha"]
 
@@ -15,9 +15,10 @@ script = ExtResource("2_o1cpg")
 wait_time = 100.0
 one_shot = true
 
-[node name="InteractArea" parent="." instance=ExtResource("3_qrdcv")]
+[node name="InteractArea" parent="." instance=ExtResource("3_c67tk")]
+InteractionType = "item"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractArea"]
 scale = Vector2(15, 15)
 shape = SubResource("RectangleShape2D_gjmha")
 
