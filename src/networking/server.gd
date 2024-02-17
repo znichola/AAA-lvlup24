@@ -9,7 +9,7 @@ var socket := WebSocketPeer.new()
 func log_message(message):
 	var time = "[color=#aaaaaa] %s [/color]" % Time.get_time_string_from_system()
 	print(time + message + "\n")
-
+	
 func _ready():
 	if tcp_server.listen(PORT) != OK:
 		log_message("Unable to start server.")
@@ -27,6 +27,7 @@ func _process(_delta):
 	if socket.get_ready_state() == WebSocketPeer.STATE_OPEN:
 		while socket.get_available_packet_count():
 			log_message(socket.get_packet().get_string_from_ascii())
+			print("Variant rescived", bytes_to_var(socket.get_packet()))
 
 
 func _exit_tree():
