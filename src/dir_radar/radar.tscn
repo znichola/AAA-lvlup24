@@ -1,14 +1,18 @@
-[gd_scene format=3 uid="uid://580ak3ggwex5"]
+[gd_scene load_steps=4 format=3 uid="uid://580ak3ggwex5"]
+
+[ext_resource type="Script" path="res://src/dir_radar/radar.gd" id="1_ifjl3"]
+[ext_resource type="Texture2D" uid="uid://6vxubqi3yh77" path="res://assets/dir/radar_background.png" id="2_22t4w"]
+[ext_resource type="Texture2D" uid="uid://cxsbn4dj4h3uv" path="res://assets/dir/radar_line.png" id="3_4l77p"]
 
 [node name="Radar" type="Node2D"]
+script = ExtResource("1_ifjl3")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(1, 1, 1, 0.376471)
-polygon = PackedVector2Array(0, 317, 62, 78, 300, 0, 534, 86, 601, 318, 526, 544, 301, 602, 51, 547)
+[node name="RadarBackground" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_22t4w")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 188.0
-offset_top = 284.0
-offset_right = 475.0
-offset_bottom = 371.0
-text = "radar screen"
+[node name="pings_store" type="Node2D" parent="."]
+
+[node name="RadarLine" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_4l77p")
