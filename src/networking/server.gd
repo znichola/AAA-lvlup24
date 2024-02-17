@@ -1,6 +1,6 @@
 extends Node
 
-signal api_move_from_character(pos: Vector2)
+signal api_rodot_pos_update(pos: Vector2)
 
 # The port we will listen to.
 const PORT = 9080
@@ -26,7 +26,14 @@ func _process(_delta):
 	if socket.get_ready_state() == WebSocketPeer.STATE_OPEN:
 		while socket.get_available_packet_count():
 			#Global.log_message(socket.get_packet().get_string_from_ascii())
-			Global.log_vet_message(socket.get_packet())
+			var packet = socket.get_packet() 
+			Global.log_vet_message(packet)
+			var data = bytes_to_var(packet)
+			if data == null:
+				print("error with data!")
+				return
+			if data[0] == "robot-pos":
+				api_rodot_pos_update.emit(data[1])
 
 
 func _exit_tree():

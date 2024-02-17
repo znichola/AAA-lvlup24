@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bcku64q73c1r0"]
+
+[node name="RadarPing" type="Node2D"]

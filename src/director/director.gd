@@ -1,12 +1,6 @@
 extends Node2D
 
-@onready var server_net = $Networking
-
-## Called when the node enters the scene tree for the first time.
-#func _ready():
-	#server_net.start_server()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+func _on_networking_api_rodot_pos_update(pos):
+	pass # Replace with function body.

@@ -4,10 +4,12 @@ extends Node2D
 
 var pos_data_to_transfer = null
 
+
 func _process(_delta):
 	if pos_data_to_transfer != null:
 		client_net.api_send_data("robot-pos", pos_data_to_transfer)
 		pos_data_to_transfer = null
+
 
 func _on_world_api_move(pos):
 	print("got new position update from chara")

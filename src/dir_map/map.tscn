@@ -1,31 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds524h062j82b"]
+[gd_scene load_steps=4 format=3 uid="uid://ds524h062j82b"]
 
 [ext_resource type="PackedScene" uid="uid://caegekivcjox2" path="res://src/dir_pins/pin_scene.tscn" id="1_oyka2"]
+[ext_resource type="Script" path="res://src/dir_map/map.gd" id="1_ws8jp"]
+[ext_resource type="Texture2D" uid="uid://8a0ie4tjaygn" path="res://assets/dir/map_papier_2.png" id="2_1du1q"]
 
 [node name="Map" type="Node2D"]
-
-[node name="map-rought-outline" type="Polygon2D" parent="."]
-color = Color(1, 1, 1, 0.333333)
-polygon = PackedVector2Array(23, 76, 22, 14, 108, 10, 211, 21, 564, 7, 588, 45, 561, 162, 589, 481, 596, 572, 547, 591, 450, 586, 132, 584, 32, 577, 10, 550, 26, 254)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 137.0
-offset_top = 230.0
-offset_right = 500.0
-offset_bottom = 529.0
-text = "map that's a bit ripped up and stained"
+script = ExtResource("1_ws8jp")
 
 [node name="PinScene" parent="." instance=ExtResource("1_oyka2")]
 
 [node name="pins bin" type="Polygon2D" parent="."]
-position = Vector2(-297, -535)
+position = Vector2(-625, -745)
 color = Color(1, 1, 1, 0.392157)
 polygon = PackedVector2Array(154, 800, 155, 594, 284, 585, 271, 917, 164, 938)
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = -119.0
-offset_top = 130.0
-offset_right = -18.0
-offset_bottom = 479.0
+offset_left = -447.0
+offset_top = -80.0
+offset_right = -346.0
+offset_bottom = 269.0
 text = "3-4 boxes with lots of pins of different colors
 "
+
+[node name="MapPapier2" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1du1q")
