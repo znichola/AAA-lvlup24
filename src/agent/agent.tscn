@@ -73,10 +73,11 @@ offset_bottom = 241.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
+stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="UI/AgentViewportContainer"]
 handle_input_locally = false
-size = Vector2i(800, 512)
+size = Vector2i(800, 800)
 render_target_update_mode = 4
 
 [node name="world" parent="UI/AgentViewportContainer/SubViewport" instance=ExtResource("2_ai3rw")]
