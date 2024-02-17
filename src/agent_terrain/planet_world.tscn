@@ -1,27 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7ivcx6esptyt"]
+[gd_scene load_steps=6 format=3 uid="uid://b7ivcx6esptyt"]
 
 [ext_resource type="PackedScene" uid="uid://bu7in63c5fakf" path="res://src/agent_robo/robo.tscn" id="1_ok4l4"]
 [ext_resource type="Texture2D" uid="uid://dbpxqj6hwdlb6" path="res://assets/agent/terrain.png" id="1_y2t65"]
 [ext_resource type="PackedScene" uid="uid://c33h5d1t1wcwk" path="res://src/agent_terrain/item.tscn" id="2_kt22t"]
+[ext_resource type="PackedScene" uid="uid://b7e55fw2xrssd" path="res://src/agent_robo/interact_area.tscn" id="3_ccj50"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_disy3"]
+size = Vector2(23.7559, 19.7505)
 
 [node name="world" type="Node2D"]
 
-[node name="Terrain" type="Sprite2D" parent="."]
-scale = Vector2(5, 5)
-texture = ExtResource("1_y2t65")
-
-[node name="Chara (Undertale reference??)" parent="." instance=ExtResource("1_ok4l4")]
+[node name="Chara" parent="." instance=ExtResource("1_ok4l4")]
 position = Vector2(-202, 438)
 MAX_SPEED = 800
 ACCELERATION = 500
 FRICTION = 3000
 
-[node name="Camera2D" type="Camera2D" parent="Chara (Undertale reference??)"]
+[node name="Camera2D" type="Camera2D" parent="Chara"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Terrain" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_y2t65")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-670, 491, -1632, -1789, -2081, -1848, -1888, -1446, -3924, -549, -4061, -686, -4561, -744, -4645, -997, -4934, -1154, -4900, -1443, -4954, -1562, -5761, -2355, -5710, -2832, -4013, -3852, -3653, -3892, -3297, -3843, -3150, -3629, -3092, -3344, -2670, -3044, -2511, -3290, -1922, -3235, -1076, -3213, -784, -2983, -605, -2294, 1524, -2904, 1401, -1262, 1081, -938, 824, -793, 562, -168, 347, -112, 257, 122)
+[node name="Walls" type="StaticBody2D" parent="Terrain"]
+scale = Vector2(0.2, 0.2)
+
+[node name="CPU" type="CollisionPolygon2D" parent="Terrain/Walls"]
+polygon = PackedVector2Array(-154, 2088, -642, 748, 965, 210, 1161, 841, 740, 1001, 950, 1725)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/Walls"]
+polygon = PackedVector2Array(-670, 491, -1632, -1789, -2081, -1848, -1888, -1446, -3924, -549, -4061, -686, -4561, -744, -4645, -997, -4934, -1154, -4900, -1443, -4954, -1562, -5761, -2355, -5710, -2832, -4013, -3852, -3653, -3892, -3297, -3843, -3150, -3629, -3092, -3344, -2670, -3044, -2511, -3290, -1922, -3235, -1076, -3213, -784, -2983, -605, -2294, 1524, -2904, 1401, -1262, 1081, -938, 824, -793, 707, -398, 562, -168, 347, -112, 257, 122)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Terrain/Walls"]
+polygon = PackedVector2Array(-920, 1050, -1759, -1122, -3707, -353, -1288, 1338)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Terrain/Walls"]
+polygon = PackedVector2Array(-3200, 544, -2652, 876, -2470, 868, -1268, 1664, -652, 2466, -1772, 3094, -1668, 3250, -1190, 2992, -836, 4720, -1750, 6614, -2322, 6424, -3426, 6636, -4550, 6702, -4658, 4942, -3286, 4176, -3194, 3884, -3544, 4082, -3854, 3512, -3490, 878)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Terrain/Walls"]
+polygon = PackedVector2Array(-418, 2746, -1056, 2961, -603, 4758, 5, 4603)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Terrain/Walls"]
+polygon = PackedVector2Array(-7, 2615, 420, 4612, 624, 4762, 1543, 4162, 1651, 3922, 1936, 3710, 2004, 3283, 2398, 3158, 2836, 3254, 2986, 3628, 3246, 3696, 3591, 3673, 4253, 4043, 4430, 3770, 4109, 3424, 4171, 3201, 4558, 3638, 4729, 3038, 5408, 2995, 5790, 2786, 5975, 2440, 6135, 2322, 6986, 1987, 7445, 1578, 5353, -773, 5101, -549, 4904, -224, 4648, -46, 4488, 188, 4189, 294, 2761, 1605, 3239, 2165, 3086, 2290, 2539, 1698)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Terrain/Walls"]
+polygon = PackedVector2Array(2448, 1411, 2621, 1378, 2868, 1042, 2885, 908, 3055, 680, 3180, 415, 3709, 328, 5203, -933, 3697, -2770, 1743, -2944, 1461, 262, 1862, 745, 1870, 908, 1923, 1072, 2137, 1188, 2213, 1319)
+
+[node name="InteractArea" parent="Terrain" instance=ExtResource("3_ccj50")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/InteractArea"]
+position = Vector2(208.4, 257.4)
+rotation = -0.279253
+scale = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_disy3")
 
 [node name="Item" parent="." instance=ExtResource("2_kt22t")]
 position = Vector2(196, 356)

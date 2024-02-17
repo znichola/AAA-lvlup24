@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7e55fw2xrssd"]
+
+[ext_resource type="Script" path="res://src/agent_robo/interact_area.gd" id="1_pxojr"]
+
+[node name="InteractArea" type="Area2D"]
+script = ExtResource("1_pxojr")
