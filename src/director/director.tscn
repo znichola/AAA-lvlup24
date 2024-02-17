@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b61ywignrgouq"]
+[gd_scene load_steps=11 format=3 uid="uid://b61ywignrgouq"]
 
 [ext_resource type="Script" path="res://src/networking/server.gd" id="1_3qvbt"]
 [ext_resource type="Script" path="res://src/director/director.gd" id="1_fae6w"]
@@ -6,15 +6,30 @@
 [ext_resource type="Texture2D" uid="uid://bgliaixl77iqo" path="res://assets/dir/director_ui.png" id="2_bbg4e"]
 [ext_resource type="PackedScene" uid="uid://580ak3ggwex5" path="res://src/dir_radar/radar.tscn" id="3_dyx70"]
 [ext_resource type="PackedScene" uid="uid://tbxa5sx42wi4" path="res://src/dir_console/console.tscn" id="4_8ya0w"]
-[ext_resource type="Script" path="res://src/director/CenterPoint.gd" id="5_h4jv7"]
+[ext_resource type="Script" path="res://src/director/radar_to_map.gd" id="7_bj4cj"]
+[ext_resource type="PackedScene" uid="uid://cx1cpnsw463v3" path="res://src/director/button.tscn" id="8_j3hj7"]
+
+[sub_resource type="Curve2D" id="Curve2D_vokny"]
+_data = {
+"points": PackedVector2Array(-222.912, 399.892, 222.912, -399.892, -659.722, 541.108, -423.669, 239.209, 423.669, -239.209, 277.671, -425.672)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_dyn7o"]
+_data = {
+"points": PackedVector2Array(-24.4489, 261.799, 24.4489, -261.799, -660.736, 541.108, 0, 0, -93.5003, -299.416, -682.017, -565.844)
+}
+point_count = 2
 
 [node name="Director" type="Node2D"]
 script = ExtResource("1_fae6w")
+metadata/_edit_lock_ = true
 
 [node name="DirectorUi" type="Sprite2D" parent="."]
 position = Vector2(42, 97)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_bbg4e")
+metadata/_edit_lock_ = true
 
 [node name="Radar" parent="." instance=ExtResource("3_dyx70")]
 position = Vector2(-665, 525)
@@ -25,11 +40,11 @@ position = Vector2(-87, 335)
 [node name="Map" parent="." instance=ExtResource("2_31nnx")]
 position = Vector2(296, -413)
 
-[node name="CameraTarget" type="Node2D" parent="."]
-position = Vector2(-476, 429)
-script = ExtResource("5_h4jv7")
-
-[node name="Camera2D" type="Camera2D" parent="CameraTarget"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-669, 522)
+rotation = 0.974074
+scale = Vector2(0.975367, 0.981704)
+skew = 0.0156211
 process_callback = 0
 position_smoothing_enabled = true
 editor_draw_limits = true
@@ -37,4 +52,67 @@ editor_draw_limits = true
 [node name="Networking" type="Node" parent="."]
 script = ExtResource("1_3qvbt")
 
+[node name="radar_to_map" type="Path2D" parent="."]
+position = Vector2(-18, -3)
+scale = Vector2(0.986779, 0.970232)
+curve = SubResource("Curve2D_vokny")
+script = ExtResource("7_bj4cj")
+
+[node name="radar_to_map_btn" parent="radar_to_map" instance=ExtResource("8_j3hj7")]
+offset_left = -368.877
+offset_top = 217.474
+offset_right = -240.877
+offset_bottom = 335.474
+rotation = 0.599142
+
+[node name="map_to_radar_btn" parent="radar_to_map" instance=ExtResource("8_j3hj7")]
+offset_left = -138.836
+offset_top = -178.308
+offset_right = -10.8355
+offset_bottom = -60.3079
+rotation = -2.40708
+
+[node name="PathFollow2D" type="PathFollow2D" parent="radar_to_map"]
+position = Vector2(-659.722, 541.108)
+rotation = -0.38575
+rotates = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="radar_to_map/PathFollow2D"]
+rotation = 1.36766
+remote_path = NodePath("../../../Camera2D")
+
+[node name="Navigation_arrows" type="Node2D" parent="."]
+position = Vector2(-4, -4)
+
+[node name="radar_to_opts" type="Path2D" parent="."]
+position = Vector2(-18, -3)
+scale = Vector2(0.986779, 0.970232)
+curve = SubResource("Curve2D_dyn7o")
+
+[node name="radar_to_opts" parent="radar_to_opts" instance=ExtResource("8_j3hj7")]
+offset_left = -1077.24
+offset_top = 228.811
+offset_right = -949.242
+offset_bottom = 346.811
+rotation = 0.109327
+
+[node name="opts_to_radar" parent="radar_to_opts" instance=ExtResource("8_j3hj7")]
+offset_left = -729.647
+offset_top = -322.603
+offset_right = -601.647
+offset_bottom = -204.603
+rotation = 3.12748
+
+[node name="PathFollow2D" type="PathFollow2D" parent="radar_to_opts"]
+position = Vector2(-660.736, 541.108)
+rotation = -1.47768
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="radar_to_opts/PathFollow2D"]
+remote_path = NodePath("../../../Camera2D")
+
 [connection signal="api_rodot_pos_update" from="Networking" to="." method="_on_networking_api_rodot_pos_update"]
+[connection signal="pressed" from="radar_to_map/radar_to_map_btn" to="." method="_on_radar_to_map_btn_pressed"]
+[connection signal="pressed" from="radar_to_map/map_to_radar_btn" to="." method="_on_map_to_radar_btn_pressed"]
+[connection signal="pressed" from="radar_to_opts/radar_to_opts" to="." method="_on_radar_to_opts_pressed"]
+[connection signal="pressed" from="radar_to_opts/opts_to_radar" to="." method="_on_opts_to_radar_pressed"]
