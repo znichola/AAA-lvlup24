@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxaa046x45suv"]
+
+[ext_resource type="Script" path="res://src/main/main.gd" id="1_drmfp"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_drmfp")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ServerContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelServer" type="Label" parent="Control/HBoxContainer/ServerContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
+theme_override_font_sizes/font_size = 30
+text = "Take the role of 
+Director"
+
+[node name="DirectorBtn" type="Button" parent="Control/HBoxContainer/ServerContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Start Server"
+
+[node name="TextServer" type="RichTextLabel" parent="Control/HBoxContainer/ServerContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_following = true
+
+[node name="ClientContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelClient" type="Label" parent="Control/HBoxContainer/ClientContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
+theme_override_font_sizes/font_size = 30
+text = "Take the role of
+Agent"
+
+[node name="AgentBtn" type="Button" parent="Control/HBoxContainer/ClientContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Start Agent"
+
+[node name="TextClient" type="RichTextLabel" parent="Control/HBoxContainer/ClientContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_following = true
+
+[connection signal="pressed" from="Control/HBoxContainer/ServerContainer/DirectorBtn" to="." method="_on_director_btn_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/ClientContainer/AgentBtn" to="." method="_on_agent_btn_pressed"]

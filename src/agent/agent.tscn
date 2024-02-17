@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg2eocn0aoog1"]
+
+[ext_resource type="Script" path="res://src/networking/client.gd" id="1_p0f3u"]
+[ext_resource type="PackedScene" uid="uid://b7ivcx6esptyt" path="res://src/planet_world.tscn" id="2_kw387"]
+
+[node name="Agent" type="Node2D"]
+script = ExtResource("1_p0f3u")
+
+[node name="UI-rough-layout" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.219608)
+
+[node name="Polygon2D" type="Polygon2D" parent="UI-rough-layout"]
+position = Vector2(57, -9)
+polygon = PackedVector2Array(209, 118, 212, 522, 266, 575, 589, 595, 959, 577, 1028, 530, 1046, 150, 943, 51, 278, 53)
+
+[node name="Polygon2D2" type="Polygon2D" parent="UI-rough-layout"]
+position = Vector2(22, -32)
+polygon = PackedVector2Array(44, 181, 32, 535, 135, 567, 192, 130, 68, 86)
+
+[node name="Networking" type="Node2D" parent="."]
+script = ExtResource("1_p0f3u")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BTNvbox" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_right = 219.0
+grow_vertical = 2
+alignment = 1
+
+[node name="UpBTN" type="Button" parent="UI/BTNvbox"]
+layout_mode = 2
+text = "^"
+
+[node name="DownBTN" type="Button" parent="UI/BTNvbox"]
+layout_mode = 2
+text = "\\/"
+
+[node name="LeftBTN" type="Button" parent="UI/BTNvbox"]
+layout_mode = 2
+text = ">"
+
+[node name="RightBTN" type="Button" parent="UI/BTNvbox"]
+layout_mode = 2
+text = "<
+"
+
+[node name="PickupBTN" type="Button" parent="UI/BTNvbox"]
+layout_mode = 2
+text = "Pickup"
+
+[node name="SendPingBTN" type="Button" parent="UI/BTNvbox"]
+layout_mode = 2
+text = "Send Ping"
+
+[node name="AgentViewportContainer" type="SubViewportContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -875.0
+offset_top = 53.0
+offset_right = -75.0
+offset_bottom = -83.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/AgentViewportContainer"]
+handle_input_locally = false
+size = Vector2i(800, 512)
+render_target_update_mode = 4
+
+[node name="world" parent="UI/AgentViewportContainer/SubViewport" instance=ExtResource("2_kw387")]

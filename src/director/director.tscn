@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://b61ywignrgouq"]
+
+[ext_resource type="Script" path="res://src/networking/server.gd" id="1_3qvbt"]
+[ext_resource type="PackedScene" uid="uid://ds524h062j82b" path="res://src/map/map.tscn" id="2_d2srj"]
+[ext_resource type="PackedScene" uid="uid://580ak3ggwex5" path="res://src/radar/radar.tscn" id="3_20y4g"]
+[ext_resource type="PackedScene" uid="uid://tbxa5sx42wi4" path="res://src/console/console.tscn" id="4_qcygl"]
+[ext_resource type="Script" path="res://src/director/CenterPoint.gd" id="5_h4jv7"]
+
+[node name="Director" type="Node2D"]
+script = ExtResource("1_3qvbt")
+
+[node name="Map" parent="." instance=ExtResource("2_d2srj")]
+position = Vector2(146, -542)
+
+[node name="Radar" parent="." instance=ExtResource("3_20y4g")]
+position = Vector2(-724, -316)
+
+[node name="Console" parent="." instance=ExtResource("4_qcygl")]
+position = Vector2(-1, 229)
+
+[node name="CameraTarget" type="Node2D" parent="."]
+script = ExtResource("5_h4jv7")
+
+[node name="Camera2D" type="Camera2D" parent="CameraTarget"]
+process_callback = 0
+position_smoothing_enabled = true
+editor_draw_limits = true
