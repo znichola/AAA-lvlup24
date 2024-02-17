@@ -14,12 +14,13 @@ size = Vector2(23.7559, 19.7505)
 script = ExtResource("1_yhjlo")
 
 [node name="Chara" parent="." instance=ExtResource("1_ok4l4")]
-position = Vector2(216, 955)
+position = Vector2(1500, 400)
 MAX_SPEED = 800
 ACCELERATION = 500
 FRICTION = 3000
 
 [node name="Camera2D" type="Camera2D" parent="Chara"]
+zoom = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Chara"]
 texture = ExtResource("2_qm220")
@@ -111,8 +112,26 @@ rotation = -0.279253
 scale = Vector2(4, 8)
 shape = SubResource("RectangleShape2D_disy3")
 
-[node name="Item" parent="." instance=ExtResource("2_kt22t")]
+[node name="Node" type="Node" parent="."]
+
+[node name="Item0" parent="Node" instance=ExtResource("2_kt22t")]
 position = Vector2(3089, -440)
 ID = "Memory Bank"
+
+[node name="Item1" parent="Node" instance=ExtResource("2_kt22t")]
+position = Vector2(-7857, 6398)
+scale = Vector2(0.4, 0.4)
+
+[node name="Item2" parent="Node" instance=ExtResource("2_kt22t")]
+position = Vector2(6267, 6140)
+
+[node name="Item3" parent="Node" instance=ExtResource("2_kt22t")]
+position = Vector2(6620, -5543)
+
+[node name="Item4" parent="Node" instance=ExtResource("2_kt22t")]
+position = Vector2(-3103, -4659)
+
+[node name="Item5" parent="Node" instance=ExtResource("2_kt22t")]
+position = Vector2(-6940, -6097)
 
 [connection signal="api_move" from="Chara" to="." method="_on_chara_api_move"]

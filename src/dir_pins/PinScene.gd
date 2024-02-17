@@ -12,8 +12,9 @@ func _process(_delta):
 	pass
 	
 func _input(event):
-	if(event.is_action_pressed("left_click")):
-		var initiatedElement = pinElement.instantiate()
-		initiatedElement.position = get_local_mouse_position()
-		$Pins.add_child(initiatedElement)
-		
+	if(event.is_action_pressed("left_click")) :
+		var p = get_local_mouse_position()
+		if p.x > -320 && p.x < 320 && p.y > -320 && p.y < 320:
+			var initiatedElement = pinElement.instantiate()
+			initiatedElement.position = get_local_mouse_position()
+			$Pins.add_child(initiatedElement)
