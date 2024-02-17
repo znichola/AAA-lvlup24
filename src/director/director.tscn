@@ -62,20 +62,22 @@ point_count = 2
 script = ExtResource("1_fae6w")
 metadata/_edit_lock_ = true
 
-[node name="DirectorUi" type="Sprite2D" parent="."]
-position = Vector2(42, 97)
-texture = ExtResource("2_bbg4e")
-metadata/_edit_lock_ = true
-
 [node name="Radar" parent="." instance=ExtResource("3_dyx70")]
-position = Vector2(-665, 525)
+position = Vector2(-661, 524)
+scale = Vector2(1.32724, 1.32724)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_i13gq")
-offset_left = -838.0
-offset_top = 333.0
-offset_right = -478.0
-offset_bottom = 693.0
+offset_left = -895.0
+offset_top = 286.0
+offset_right = -423.0
+offset_bottom = 759.0
+
+[node name="DirectorUi" type="Sprite2D" parent="."]
+position = Vector2(41.9999, 97)
+scale = Vector2(1, 1)
+texture = ExtResource("2_bbg4e")
+metadata/_edit_lock_ = true
 
 [node name="Console" parent="." instance=ExtResource("4_8ya0w")]
 position = Vector2(-87, 335)

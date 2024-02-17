@@ -13,7 +13,7 @@ size = Vector2(23.7559, 19.7505)
 script = ExtResource("1_yhjlo")
 
 [node name="Chara" parent="." instance=ExtResource("1_ok4l4")]
-position = Vector2(1500, 400)
+position = Vector2(-9305, 24)
 MAX_SPEED = 800
 ACCELERATION = 500
 FRICTION = 3000

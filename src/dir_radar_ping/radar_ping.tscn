@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcku64q73c1r0"]
 
 [ext_resource type="Script" path="res://src/dir_radar_ping/radar_ping.gd" id="1_pewe4"]
-[ext_resource type="Texture2D" uid="uid://br8djqpybaap" path="res://assets/agent/icon.svg" id="2_kif32"]
+[ext_resource type="Texture2D" uid="uid://cu1qfjqqopq55" path="res://assets/dir/dot_radar_greeen.png" id="2_bgkf2"]
 
 [node name="RadarPing" type="Node2D"]
 script = ExtResource("1_pewe4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_kif32")
+texture = ExtResource("2_bgkf2")
