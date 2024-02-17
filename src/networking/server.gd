@@ -8,8 +8,7 @@ var socket := WebSocketPeer.new()
 
 func log_message(message):
 	var time = "[color=#aaaaaa] %s [/color]" % Time.get_time_string_from_system()
-	%TextServer.text += time + message + "\n"
-	print(%TextServer.text)
+	print(time + message + "\n")
 
 func _ready():
 	if tcp_server.listen(PORT) != OK:
