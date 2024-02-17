@@ -1,92 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxaa046x45suv"]
+[gd_scene load_steps=5 format=3 uid="uid://cxaa046x45suv"]
 
 [ext_resource type="Script" path="res://src/AA_main/main.gd" id="1_drmfp"]
-[ext_resource type="Texture2D" uid="uid://pfs5hqcsj1or" path="res://assets/share/title_screen_concept.png" id="2_1yluc"]
+[ext_resource type="Texture2D" uid="uid://dn58an6vian4i" path="res://assets/start_screen/title_screen_concept_v2_background.png" id="2_7dm8k"]
+[ext_resource type="Texture2D" uid="uid://bmxuhwn0q2hvl" path="res://assets/start_screen/input_ip.png" id="3_kbtrf"]
+[ext_resource type="Texture2D" uid="uid://54bmpnqace7p" path="res://assets/start_screen/start_server.png" id="4_xuni5"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_drmfp")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TitleScreenConceptV2Background" type="Sprite2D" parent="."]
+position = Vector2(539, 361)
+texture = ExtResource("2_7dm8k")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 94.0
+offset_top = 584.0
+offset_right = 464.0
+offset_bottom = 615.0
+placeholder_text = "172.27.144.1"
 
-[node name="ServerContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="start_server" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 467.0
+offset_right = 421.0
+offset_bottom = 513.0
+icon = ExtResource("4_xuni5")
 
-[node name="LabelServer" type="Label" parent="Control/HBoxContainer/ServerContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
-theme_override_font_sizes/font_size = 30
-text = "Take the role of 
-Director"
+[node name="input_ip" type="Button" parent="."]
+offset_left = 65.0
+offset_top = 538.0
+offset_right = 422.0
+offset_bottom = 584.0
+icon = ExtResource("3_kbtrf")
 
-[node name="DirectorBtn" type="Button" parent="Control/HBoxContainer/ServerContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 30
-text = "Start Server"
-
-[node name="TextServer" type="RichTextLabel" parent="Control/HBoxContainer/ServerContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-bbcode_enabled = true
-scroll_following = true
-
-[node name="ClientContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="LabelClient" type="Label" parent="Control/HBoxContainer/ClientContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
-theme_override_font_sizes/font_size = 30
-text = "Take the role of
-Agent"
-
-[node name="AgentBtn" type="Button" parent="Control/HBoxContainer/ClientContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 30
-text = "Start Agent"
-
-[node name="LabelClient2" type="Label" parent="Control/HBoxContainer/ClientContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
-theme_override_font_sizes/font_size = 30
-text = "Input server IP agress
-
-$> ipconfig "
-
-[node name="LineEdit" type="LineEdit" parent="Control/HBoxContainer/ClientContainer"]
-layout_mode = 2
-
-[node name="TextClient" type="RichTextLabel" parent="Control/HBoxContainer/ClientContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-bbcode_enabled = true
-scroll_following = true
-
-[node name="TitleScreenConcept" type="Sprite2D" parent="."]
-position = Vector2(533, 353)
-texture = ExtResource("2_1yluc")
-
-[connection signal="pressed" from="Control/HBoxContainer/ServerContainer/DirectorBtn" to="." method="_on_director_btn_pressed"]
-[connection signal="pressed" from="Control/HBoxContainer/ClientContainer/AgentBtn" to="." method="_on_agent_btn_pressed"]
+[connection signal="pressed" from="start_server" to="." method="_on_start_server_pressed"]
+[connection signal="pressed" from="input_ip" to="." method="_on_input_ip_pressed"]

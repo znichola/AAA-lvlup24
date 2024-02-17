@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6tbh130alvpe"
-path="res://.godot/imported/terrain.png-6481a5295b2b73aaf91563c05fbb8410.ctex"
+uid="uid://cu1qfjqqopq55"
+path="res://.godot/imported/dot_radar_greeen.png-94dd1eca9e7f4bde335f38e56f456848.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/agent/terrain.png"
-dest_files=["res://.godot/imported/terrain.png-6481a5295b2b73aaf91563c05fbb8410.ctex"]
+source_file="res://assets/dir/dot_radar_greeen.png"
+dest_files=["res://.godot/imported/dot_radar_greeen.png-94dd1eca9e7f4bde335f38e56f456848.ctex"]
 
 [params]
 
