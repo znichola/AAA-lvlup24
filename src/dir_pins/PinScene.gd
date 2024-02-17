@@ -1,6 +1,6 @@
 extends Node2D
 
-var pinElement = preload("res://src/dir_pins/PinElement.gd")
+var pinElement = preload("res://src/dir_pins/PinElement.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
