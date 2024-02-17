@@ -26,7 +26,6 @@ func _process(_delta):
 	#print("slkjdflksdj", WebSocketPeer.STATE_OPEN)
 	
 	if socket.get_ready_state() == WebSocketPeer.STATE_OPEN:
-		print("sdlkfjlksdjfklsdjklf")
 		while socket.get_available_packet_count():
 			#Global.log_message(socket.get_packet().get_string_from_ascii())
 			var packet = socket.get_packet() 

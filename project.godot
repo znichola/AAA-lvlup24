@@ -20,6 +20,11 @@ config/icon="res://assets/agent/icon.svg"
 
 Global="*res://src/autoloads/globals.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+
 [input]
 
 up={
