@@ -1,9 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg2eocn0aoog1"]
+[gd_scene load_steps=7 format=3 uid="uid://cg2eocn0aoog1"]
 
 [ext_resource type="Script" path="res://src/agent/agent.gd" id="1_h7mfl"]
 [ext_resource type="Script" path="res://src/networking/client.gd" id="1_p0f3u"]
 [ext_resource type="PackedScene" uid="uid://b7ivcx6esptyt" path="res://src/agent_terrain/planet_world.tscn" id="2_ai3rw"]
 [ext_resource type="Texture2D" uid="uid://b0awe1kjsi4qc" path="res://assets/agent/robot_interface_background.png" id="2_d3u4v"]
+[ext_resource type="Shader" path="res://assets/share/start.gdshader" id="5_xlaie"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3u47k"]
+shader = ExtResource("5_xlaie")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.071
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 5.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.02
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 2.0
+shader_parameter/static_noise_intensity = 0.03
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.2
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.0
+shader_parameter/vignette_opacity = 0.503
 
 [node name="Agent" type="Node2D"]
 script = ExtResource("1_h7mfl")
@@ -81,6 +106,11 @@ size = Vector2i(800, 800)
 render_target_update_mode = 4
 
 [node name="world" parent="UI/AgentViewportContainer/SubViewport" instance=ExtResource("2_ai3rw")]
+
+[node name="Shader" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_3u47k")
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [connection signal="api_data_received" from="Networking" to="." method="_on_networking_api_data_received"]
 [connection signal="button_up" from="UI/BTNvbox/PickupBTN" to="Networking" method="_on_pickup_btn_button_up"]
