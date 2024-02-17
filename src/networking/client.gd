@@ -1,29 +1,22 @@
 extends Node
 
-# The port we will listen to.
-const PORT = 9080
-var tcp_server := TCPServer.new()
+# The URL we will connect to.
+var websocket_url = "ws://localhost:9080"
 var socket := WebSocketPeer.new()
 
 
 func log_message(message):
 	var time = "[color=#aaaaaa] %s [/color]" % Time.get_time_string_from_system()
-	%TextServer.text += time + message + "\n"
-	print(%TextServer.text)
-
+	%TextClient.text += time + message + "\n"
+	print(%TextClient.text)
 
 func _ready():
-	if tcp_server.listen(PORT) != OK:
-		log_message("Unable to start server.")
+	if socket.connect_to_url(websocket_url) != OK:
+		log_message("Unable to connect.")
 		set_process(false)
-	print("client started")
+	print("client connected")
 
 func _process(_delta):
-	while tcp_server.is_connection_available():
-		var conn: StreamPeerTCP = tcp_server.take_connection()
-		assert(conn != null)
-		socket.accept_stream(conn)
-
 	socket.poll()
 
 	if socket.get_ready_state() == WebSocketPeer.STATE_OPEN:
@@ -33,7 +26,6 @@ func _process(_delta):
 
 func _exit_tree():
 	socket.close()
-	tcp_server.stop()
 
 func _input(event):
 	if event.is_action_pressed("down"):
