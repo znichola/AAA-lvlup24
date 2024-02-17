@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Reduce, Reuse, Recycle"
-run/main_scene="res://src/#main/main.tscn"
+run/main_scene="res://src/AA_main/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://assets/agent/icon.svg"
+
+[autoload]
+
+Global="*res://src/autoloads/globals.gd"
 
 [input]
 

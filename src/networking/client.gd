@@ -8,8 +8,13 @@ var socket := WebSocketPeer.new()
 
 var connectionEstablished = false
 
+
+func _ready():
+	websocket_url = "ws://" + Global.host_ip
+
+
 func log_message(message):
-	var time = "[color=#aaaaaa] %s [/color]" % Time.get_time_string_from_system()
+	var time = "%s" % Time.get_time_string_from_system()
 	print(time + message + "\n")
 
 
@@ -20,7 +25,7 @@ func _process(_delta):
 
 	if socket.get_ready_state() == WebSocketPeer.STATE_OPEN:
 		while socket.get_available_packet_count():
-			log_message(socket.get_packet().get_string_from_ascii())
+			#log_message(socket.get_packet().get_string_from_ascii())
 			var v =  bytes_to_var(socket.get_packet())
 			print("Variant rescived", v)
 			api_data_received.emit(v[0], v[1])
@@ -28,8 +33,8 @@ func _process(_delta):
 
 func _exit_tree():
 	socket.close()
-#
-#
+
+
 #func _input(event):
 	#if event.is_action_pressed("down"):
 		#socket.send_text("down")
@@ -48,7 +53,10 @@ func api_send_data(property,data):
 func api_establish_connection():
 	if socket.connect_to_url(websocket_url) != OK:
 		log_message("Unable to connect.")
-		set_process(false)
-		return
+		#get_tree().change_scene_to_file("res://src/AA_main/main.tscn")
+		#set_process(false)
+		return false
+
 	log_message("client connected")
 	connectionEstablished = true
+	return true

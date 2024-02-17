@@ -7,7 +7,7 @@ var socket := WebSocketPeer.new()
 
 
 func log_message(message):
-	var time = "[color=#aaaaaa] %s [/color]" % Time.get_time_string_from_system()
+	var time = "%s" % Time.get_time_string_from_system()
 	print(time + message + "\n")
 	
 func _ready():

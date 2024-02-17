@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxaa046x45suv"]
 
-[ext_resource type="Script" path="res://src/#main/main.gd" id="1_drmfp"]
+[ext_resource type="Script" path="res://src/AA_main/main.gd" id="1_drmfp"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_drmfp")
@@ -63,6 +63,18 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
 text = "Start Agent"
+
+[node name="LabelClient2" type="Label" parent="Control/HBoxContainer/ClientContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
+theme_override_font_sizes/font_size = 30
+text = "Input server IP agress
+
+$> ipconfig "
+
+[node name="LineEdit" type="LineEdit" parent="Control/HBoxContainer/ClientContainer"]
+layout_mode = 2
 
 [node name="TextClient" type="RichTextLabel" parent="Control/HBoxContainer/ClientContainer"]
 unique_name_in_owner = true
