@@ -27,36 +27,36 @@ Hmmm ? Yeah why not.
 
 I don't know how long has it been since the end of the world. However I know I'm the last fucking human standing… Hahaha it could have been worse, at least I'm not not alone. She's here with me, she cares for me. 
 
-Now she's dying too. We need a new graphic card and a battery. I've marked the few potential places left on the map. Were should we start ?
+Now she's dying too. We need a new graphics card and a battery. I've marked the few potential places left on the map. Were should we start ?
 
 [i]> Eevy[/i]
 Anywhere you wish. Don't forget to turn on the agent before giving them the instructions ! They won't be able to do anything if you don't.
 ",
-# object: a graphic card
+# object: a graphics card
 "
-[b][Zone A - old computer shop][/b]
+[b][Zone A - Old computer shop][/b]
 
 [i]> Eevy[/i]
-The agent seems to have found a graphic card. 
+The agent seems to have found a graphics card. 
 [i]> Director's [/i]
 Perfect ! Only one material to go ! Let's not waste time and check the other marked spots !
 ",
 # object : old newspaper
 "
-[b][Zone B - hospital][/b]
+[b][Zone B - Hospital][/b]
 [i]> Eevy[/i]
 The agent found a old newspaper. There's nothing special about it. 
 [i]> Director [/i]
 I can't say i was hoping for much. Last time I went there, I couldn't find any medecine or any other relevant material. 
 Anyways, the one i'm trying to keep alive isn't a human anymore.
 [i]> Eevy [/i]
-Do not forget, you are. What will happen if you get sick ?
+Do not forget you are still one. What will happen if you get sick ?
 [i]> Director[/i]
 It's okay, I'll ask the agent to find what I'll need. I won't be able to do anything if you die tho. 
 ",
 # object : car battery
 "
-[b]Zone d - An old survival camp surrounded by destroyed buildings[/b]
+[b]Zone D - Old survival camp[/b]
 [i]> Eevy[/i]
 Cheer up ! The agent has found the battery ! 
 [i]> Director[/i]
@@ -76,10 +76,10 @@ Remember, little one, they have the power to shut you down, so better listen whe
 [i]> Agent[i]
 As if they could do shit without me. 
 ",
-# object : graphic card
+# object : graphics card
 "
 [b][Zone A - Old Computer shop][/b]
-[i]> Agent picked up a graphic card[/i]
+[i]> Agent picked up a graphics card[/i]
 [i]> Agent[/i]
 This place is freaking me out... I don't think the director can see it. Eevy is probably hiding them from the director. 
 She probably told them they ran away or something and I was the only one brave enough to stay. The truth is I am the only one who managed to snitch a new battery.
@@ -105,7 +105,7 @@ What could you have done anyways ? A bunch of robots can't save the mess made by
 
 # object : car battery
 "
-[b]Zone D - An old survival camp surrounded by destroyed buildings[/b]
+[b]Zone D - 0ld survival camp[/b]
 [i]> Agent picked up a car battery[/i]
 [i]> Agent[/i]
 Oh shit. 
