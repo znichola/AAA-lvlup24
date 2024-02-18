@@ -1,6 +1,7 @@
 extends Node
 
 signal api_data_received(property: String, data)
+signal api_power_toggle(pow : bool)
 
 # The URL we will connect to.
 var websocket_url = "ws://localhost:9080"
@@ -22,9 +23,15 @@ func _process(_delta):
 	if socket.get_ready_state() == WebSocketPeer.STATE_OPEN:
 		while socket.get_available_packet_count():
 			#Global.log_message(socket.get_packet().get_string_from_ascii())
-			Global.log_message(socket.get_packet())
-			var data = bytes_to_var(socket.get_packet())
-			api_data_received.emit(data[0], data[1])
+			var packet = socket.get_packet() 
+			Global.log_vet_message(packet)
+			var data = bytes_to_var(packet)
+			if data == null:
+				print("error with data!")
+				return
+			if data[0] == "power":
+				Global.robot_power = data[1]
+				api_power_toggle.emit(data[1])
 
 
 func _exit_tree():

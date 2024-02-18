@@ -25,6 +25,7 @@ func interact():
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 	axis.y = int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up"))
+
 	# we do this check to not spam the server with updates, only on release
 	if (Input.is_action_just_released("down")
 		or Input.is_action_just_released("up")
@@ -36,7 +37,7 @@ func get_input_axis():
 func move(delta):
 	axis = get_input_axis()
 	
-	if axis == Vector2.ZERO:
+	if !Global.robot_power or axis == Vector2.ZERO:
 		apply_friction(FRICTION * delta)
 	else:
 		apply_movement(axis * ACCELERATION * delta)

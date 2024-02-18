@@ -41,11 +41,6 @@ func _exit_tree():
 	tcp_server.stop()
 
 
-func _on_button_pong_pressed():
-	api_send_data("fuck", "this")
-
-
-
 func api_send_data(property, data):
 	socket.send(var_to_bytes([property, data])) # it's an array because we want to indexinto it after decoding
 	#socket.send_text("fuck")

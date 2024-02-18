@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b61ywignrgouq"]
+[gd_scene load_steps=24 format=3 uid="uid://b61ywignrgouq"]
 
 [ext_resource type="Script" path="res://src/networking/server.gd" id="1_3qvbt"]
 [ext_resource type="Script" path="res://src/director/director.gd" id="1_fae6w"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cev5rd33rw42n" path="res://assets/dir/pins_box.png" id="8_yghvx"]
 [ext_resource type="Shader" path="res://assets/share/diff.gdshader" id="9_cku3l"]
 [ext_resource type="AudioStream" uid="uid://dfqdev7lv20nm" path="res://assets/sound/eevy_Dms_theme.mp3" id="12_rx051"]
+[ext_resource type="Texture2D" uid="uid://fgwfcljoq806" path="res://assets/dir/power_button.png" id="13_igg5s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i13gq"]
 shader = ExtResource("9_cku3l")
@@ -61,6 +62,16 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xx55j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlsui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vou0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5uqj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gholc"]
+
 [node name="Director" type="Node2D"]
 script = ExtResource("1_fae6w")
 metadata/_edit_lock_ = true
@@ -92,6 +103,7 @@ position = Vector2(-669, 522)
 rotation = 0.974074
 scale = Vector2(0.975367, 0.981704)
 skew = 0.0156211
+zoom = Vector2(0.8, 0.8)
 process_callback = 0
 position_smoothing_enabled = true
 editor_draw_limits = true
@@ -256,6 +268,26 @@ stream = ExtResource("12_rx051")
 volume_db = -13.615
 autoplay = true
 
+[node name="robot_power_toggle" type="Button" parent="."]
+offset_left = -493.0
+offset_top = 60.0
+offset_right = -268.0
+offset_bottom = 276.0
+scale = Vector2(0.336919, 0.336919)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xx55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tlsui")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1vou0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_c5uqj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gholc")
+toggle_mode = true
+icon_alignment = 1
+
+[node name="PowerButton" type="Sprite2D" parent="robot_power_toggle"]
+position = Vector2(109.819, 94.9784)
+scale = Vector2(1.5075, 1.5075)
+texture = ExtResource("13_igg5s")
+hframes = 2
+
 [connection signal="api_rodot_pos_update" from="Networking" to="." method="_on_networking_api_rodot_pos_update"]
 [connection signal="pressed" from="radar_to_map/radar_to_map_btn" to="." method="_on_radar_to_map_btn_pressed"]
 [connection signal="pressed" from="radar_to_map/map_to_radar_btn" to="." method="_on_map_to_radar_btn_pressed"]
@@ -265,3 +297,4 @@ autoplay = true
 [connection signal="pressed" from="radar_to_stats/stats_to_radar" to="." method="_on_stats_to_radar_pressed"]
 [connection signal="pressed" from="stats_to_map/stats_to_map" to="." method="_on_stas_to_map_pressed"]
 [connection signal="pressed" from="stats_to_map/map_to_stats" to="." method="_on_map_to_stats_pressed"]
+[connection signal="toggled" from="robot_power_toggle" to="." method="_on_robot_power_toggle_toggled"]
