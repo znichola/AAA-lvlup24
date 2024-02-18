@@ -23,7 +23,7 @@ func log_vet_message(data : PackedByteArray):
 	print(time, ":", d)
 
 static var director_story = [
-"..loading mission",
+"..loading mission. Pro tip:  Don't forget to turn on the agent before giving them the instructions ! They won't be able to do anything if you don't.",
 "
 [b][Zone 0 - Home][/b]
 [i]> Eevy[/i]
@@ -38,7 +38,7 @@ I don't know how long has it been since the end of the world. However I know I'm
 Now she's dying too. We need a new graphics card and a battery. I've marked the few potential places left on the map. Were should we start ?
 
 [i]> Eevy[/i]
-Anywhere you wish. Don't forget to turn on the agent before giving them the instructions ! They won't be able to do anything if you don't.
+Anywhere you wish.
 ",
 # object: a graphics card
 "
@@ -75,7 +75,7 @@ Yes, yes, yes ! This is it ! Perfect ! Come on little robot, bring everything ba
 ]
 
 static var agent_story = [
-"..loading mission",
+"..loading mission. Pro tip: use WSAD to move across the map and collect items marked on your radar with a star.",
 "
 [b][Zone 0 - Home][/b]
 [i]> Agent[/i]

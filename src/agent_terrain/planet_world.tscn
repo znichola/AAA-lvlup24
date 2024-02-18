@@ -33,16 +33,10 @@ ID = "Memory Bank"
 position = Vector2(-7857, 6398)
 
 [node name="Item2" parent="Node" instance=ExtResource("2_kt22t")]
-position = Vector2(6267, 6140)
-
-[node name="Item3" parent="Node" instance=ExtResource("2_kt22t")]
-position = Vector2(6620, -5543)
-
-[node name="Item4" parent="Node" instance=ExtResource("2_kt22t")]
-position = Vector2(-3103, -4659)
+position = Vector2(6629, -5120)
 
 [node name="Item5" parent="Node" instance=ExtResource("2_kt22t")]
-position = Vector2(-6940, -6097)
+position = Vector2(-7075, -6460)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 position = Vector2(-325, -1147)
@@ -117,7 +111,7 @@ polygon = PackedVector2Array(-7061, -7708, -5967, -7888, -5696, -7652, -5196, -8
 polygon = PackedVector2Array(5673, -943, 8421, 2311, 8386, 2458, 8482, 2696, 8669, 2765, 8685, 2798, 8481, 3437, 7981, 3751, 7709, 3848, 7477, 4003, 7476, 4188, 7933, 4663, 7924, 4979, 7623, 5387, 6990, 5443, 6781, 5614, 6715, 5802, 6757, 5877, 6711, 5920, 6709, 5985, 6483, 6139, 6332, 6409, 5947, 6461, 5383, 7023, 5418, 7342, 5335, 7731, 5521, 7803, 5998, 7571, 5866, 7324, 5886, 7053, 6323, 7074, 6779, 7019, 6975, 7619, 6894, 8152, 6489, 8595, 8752, 8596, 8752, -932)
 
 [node name="radio_daisy_bell_bicycle" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-357, -6245)
+position = Vector2(6791, -7574)
 stream = ExtResource("6_ol0u5")
 volume_db = -14.392
 autoplay = true
