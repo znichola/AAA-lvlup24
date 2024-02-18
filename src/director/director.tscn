@@ -93,7 +93,15 @@ texture = ExtResource("2_bbg4e")
 metadata/_edit_lock_ = true
 
 [node name="Console" parent="." instance=ExtResource("4_8ya0w")]
-position = Vector2(-87, 335)
+position = Vector2(-70, 297)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_i13gq")
+offset_left = -61.0
+offset_top = 203.0
+offset_right = 396.0
+offset_bottom = 801.0
 
 [node name="Map" parent="." instance=ExtResource("2_31nnx")]
 position = Vector2(296, -413)

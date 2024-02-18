@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg2eocn0aoog1"]
+[gd_scene load_steps=10 format=3 uid="uid://cg2eocn0aoog1"]
 
 [ext_resource type="Script" path="res://src/agent/agent.gd" id="1_h7mfl"]
 [ext_resource type="Script" path="res://src/networking/client.gd" id="1_p0f3u"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" path="res://assets/share/start.gdshader" id="5_xlaie"]
 [ext_resource type="Texture2D" uid="uid://ob22n4qlngu" path="res://assets/agent/spritesheet.png" id="6_08ksw"]
 [ext_resource type="AudioStream" uid="uid://dq6yu8kpea5qd" path="res://assets/sound/wall-e_robots_theme.mp3" id="7_o0opa"]
+[ext_resource type="PackedScene" uid="uid://pdk0evc7tts1" path="res://src/shared/text_box.tscn" id="8_m3tp8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3u47k"]
 shader = ExtResource("5_xlaie")
@@ -91,7 +92,12 @@ scale = Vector2(4.38417, 4.38417)
 text = "Powered Standby
 .. awaiting instructions"
 
+[node name="TextBox" parent="." instance=ExtResource("8_m3tp8")]
+position = Vector2(629, 87)
+scale = Vector2(0.837986, 0.837986)
+
 [node name="Shader" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_3u47k")
 offset_right = 1152.0
 offset_bottom = 648.0

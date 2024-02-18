@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://pdk0evc7tts1"]
+[gd_scene load_steps=12 format=3 uid="uid://pdk0evc7tts1"]
 
 [ext_resource type="FontFile" uid="uid://fevchmg8dl77" path="res://assets/share/kode-mono/KodeMono-Regular.ttf" id="1_3d860"]
 [ext_resource type="FontFile" uid="uid://dpxkv40cgxtf0" path="res://assets/share/kode-mono/KodeMono-Bold.ttf" id="2_22ptu"]
@@ -99,11 +99,6 @@ spacing_space = -3
 spacing_top = 6
 spacing_bottom = 11
 
-[sub_resource type="FontVariation" id="FontVariation_ttpsy"]
-base_font = ExtResource("1_3d860")
-spacing_glyph = -2
-spacing_space = -1
-
 [node name="TextBox" type="Node2D"]
 position = Vector2(-3, 4)
 
@@ -111,7 +106,7 @@ position = Vector2(-3, 4)
 offset_left = 15.0
 offset_top = 5.0
 offset_right = 393.0
-offset_bottom = 381.0
+offset_bottom = 255.0
 theme = SubResource("Theme_3bau4")
 theme_override_colors/default_color = Color(0.654902, 1, 0.627451, 1)
 theme_override_fonts/normal_font = SubResource("FontVariation_rrx3d")
@@ -128,48 +123,6 @@ text = "[b][Intro][/b]
 i don’t know how long has it been since the end of the world. however i know i’m the last fucking human standing… hahaha it could have been worse, at least i’m not not alone. she’s here with me, she cares for me. but now she’s dying too. 
 
 i know those agents are made for- (pause, breathe) but i need then to gather as much of ressources left to keep the system running. i’ve marked the few potential places left on the map… now were should we start ?\""
-visible_characters_behavior = 1
-text_direction = 1
-structured_text_bidi_override = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = -11.0
-offset_top = -25.0
-offset_right = 519.0
-offset_bottom = 5.0
-theme_override_colors/default_color = Color(0.654902, 1, 0.627451, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.282353, 0.321569, 1)
-theme_override_fonts/normal_font = SubResource("FontVariation_ttpsy")
-theme_override_fonts/bold_font = SubResource("FontVariation_1016j")
-theme_override_fonts/italics_font = SubResource("FontVariation_og83w")
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/italics_font_size = 16
-bbcode_enabled = true
-text = "+------------------------------------+
-"
-visible_characters_behavior = 1
-text_direction = 1
-structured_text_bidi_override = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="."]
-offset_left = -11.0
-offset_top = 383.0
-offset_right = 519.0
-offset_bottom = 413.0
-theme_override_colors/default_color = Color(0.654902, 1, 0.627451, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.282353, 0.321569, 1)
-theme_override_fonts/normal_font = SubResource("FontVariation_ttpsy")
-theme_override_fonts/bold_font = SubResource("FontVariation_1016j")
-theme_override_fonts/italics_font = SubResource("FontVariation_og83w")
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/italics_font_size = 16
-bbcode_enabled = true
-text = "+------------------------------------+
-"
 visible_characters_behavior = 1
 text_direction = 1
 structured_text_bidi_override = 2
