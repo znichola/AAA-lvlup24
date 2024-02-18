@@ -14,7 +14,7 @@ size = Vector2(23.7559, 19.7505)
 script = ExtResource("1_yhjlo")
 
 [node name="Chara" parent="." instance=ExtResource("1_ok4l4")]
-position = Vector2(-607, -7334)
+position = Vector2(1361, 387)
 
 [node name="Camera2D" type="Camera2D" parent="Chara"]
 zoom = Vector2(0.5, 0.5)
