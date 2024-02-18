@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://tbxa5sx42wi4"]
+[gd_scene load_steps=3 format=3 uid="uid://tbxa5sx42wi4"]
 
 [ext_resource type="PackedScene" uid="uid://pdk0evc7tts1" path="res://src/shared/text_box.tscn" id="1_tasow"]
+[ext_resource type="Texture2D" uid="uid://ct6ft7psf8vct" path="res://assets/dir/stats_background.png" id="1_wce7u"]
 
 [node name="Console" type="Node2D"]
 
+[node name="StatsBackground" type="Sprite2D" parent="."]
+position = Vector2(228, 299)
+texture = ExtResource("1_wce7u")
+
 [node name="TextBox" parent="." instance=ExtResource("1_tasow")]
-position = Vector2(37, 167)
+position = Vector2(42, 253)
+scale = Vector2(0.966446, 0.966446)
