@@ -14,9 +14,6 @@ script = ExtResource("1_yhjlo")
 
 [node name="Chara" parent="." instance=ExtResource("1_ok4l4")]
 position = Vector2(611, 849)
-MAX_SPEED = 800
-ACCELERATION = 500
-FRICTION = 3000
 
 [node name="Camera2D" type="Camera2D" parent="Chara"]
 zoom = Vector2(0.5, 0.5)
@@ -52,7 +49,7 @@ position = Vector2(-6940, -6097)
 position = Vector2(-325, -1147)
 
 [node name="CPU" type="CollisionPolygon2D" parent="Walls"]
-polygon = PackedVector2Array(-154, 2088, -642, 748, 965, 210, 1161, 841, 740, 1001, 950, 1725)
+polygon = PackedVector2Array(-154, 2088, -642, 748, 977, 249, 1161, 841, 740, 1001, 950, 1725)
 
 [node name="BigOp" type="StaticBody2D" parent="Walls"]
 

@@ -8,6 +8,8 @@
 
 [node name="Chara" type="CharacterBody2D"]
 script = ExtResource("1_x2uf8")
+MAX_SPEED = 500
+ACCELERATION = 1000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(5, 5)
