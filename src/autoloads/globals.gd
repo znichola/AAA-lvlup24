@@ -16,7 +16,8 @@ func log_vet_message(data : PackedByteArray):
 	print(time, ":", d)
 
 static var director_story = [
-"[b][Intro][/b]
+"
+[b][Intro][/b]
 [i]> log du Directeur[/i] 
 4th of February… or the 18th… or are we in march… fuck knows what date or even time we are. i'm to tired or maybe too scared to check out…
 
@@ -26,7 +27,7 @@ i know those agents are made for- (pause, breathe) but i need then to gather as 
 ",
 # object: a big battery or smt
 "
-[b][Zone a - old computer shop][/b]
+[b][Zone A - old computer shop][/b]
 
 [i]>log du directeur[/i]
 yes... yes... yes ! this is it ! perfect ! come on little robot, bring it back home ! Eevy needs it ! This is enough to hold on for another year or two !
@@ -44,6 +45,7 @@ This_is_some_message
 This_is_some_message
 ",
 ]
+
 static var agent_story = [
 "[b][Intro][/b]
 [i]> log de l'agent[/i]
@@ -53,6 +55,7 @@ the director is... weird. it's been 4 years, 28 hours and 57 minutes since my pr
 "
 [b]story_part[/b]
 [i]> log_to_person[/i]
+[i]> battery found[/i]
 This_is_some_message
 ",
 # comments for items attached to object or something
