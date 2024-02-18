@@ -1,14 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c33h5d1t1wcwk"]
 
-[ext_resource type="Texture2D" uid="uid://ujktoeg31pfh" path="res://assets/share/itemm.png" id="1_apui3"]
+[ext_resource type="Texture2D" uid="uid://t2vwoq5cmcwn" path="res://assets/agent/start.png" id="1_0446c"]
 [ext_resource type="Script" path="res://src/agent_terrain/item.gd" id="2_o1cpg"]
 [ext_resource type="PackedScene" uid="uid://b7e55fw2xrssd" path="res://src/agent_robo/interact_area.tscn" id="3_c67tk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjmha"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbpdh"]
 
 [node name="Itemm" type="Sprite2D"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_apui3")
+texture = ExtResource("1_0446c")
 script = ExtResource("2_o1cpg")
 
 [node name="Timer" type="Timer" parent="."]
@@ -20,6 +19,6 @@ InteractionType = "item"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractArea"]
 scale = Vector2(15, 15)
-shape = SubResource("RectangleShape2D_gjmha")
+shape = SubResource("CircleShape2D_cbpdh")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

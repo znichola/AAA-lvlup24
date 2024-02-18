@@ -5,7 +5,7 @@
 
 [node name="PinImage" type="Sprite2D"]
 position = Vector2(120, 104)
-scale = Vector2(0.08, 0.08)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_oo0yy")
 script = ExtResource("2_aav2d")
 

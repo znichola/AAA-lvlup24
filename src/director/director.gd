@@ -8,6 +8,8 @@ extends Node2D
 @onready var radar_to_sats = $radar_to_stats/PathFollow2D
 @onready var stats_to_map = $stats_to_map/PathFollow2D
 
+@onready var powe_button_sprite = $robot_power_toggle/PowerButton
+
 static var time = 0.8
 
 func _on_networking_api_rodot_pos_update(pos):
@@ -17,10 +19,7 @@ func _on_networking_api_rodot_pos_update(pos):
 func _on_robot_power_toggle_toggled(toggled_on):
 	print("toggle:", toggled_on)
 	server_net.api_send_data("power", toggled_on)
-	#var sp: Sprite2D = get_child(1)
-	#print(toggled_on)
-	#sp.frame = toggled_on
-
+	powe_button_sprite.frame = toggled_on
 
 ########## Map navigation ########
 
