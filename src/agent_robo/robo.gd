@@ -10,6 +10,7 @@ signal api_interact(action: String)
 @export var INVENTORY = ["empty", 0, "empty", null]
 
 @onready var axis = Vector2.ZERO
+@onready var pick_up_sound = $AudioStreamPlayer
 
 var item = preload("res://src/agent_terrain/item.tscn")
 
@@ -69,7 +70,9 @@ func _on_zone_area_entered(area):
 	#var t = area.InteractionType 
 	if area.name == "ItemArea":
 		api_interact.emit("advance")
+		pick_up_sound.play()
 		Global.advance_story()
+		area.get_parent().queue_free()
 	
 	#if area.story_index == Global.story_index:
 		#Global.advance_story()

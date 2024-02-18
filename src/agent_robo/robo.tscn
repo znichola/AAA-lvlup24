@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu7in63c5fakf"]
+[gd_scene load_steps=5 format=3 uid="uid://bu7in63c5fakf"]
 
 [ext_resource type="Script" path="res://src/agent_robo/robo.gd" id="1_x2uf8"]
+[ext_resource type="AudioStream" uid="uid://tivod8474b4q" path="res://assets/sound/pick_up.wav" id="2_j406q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pwqsj"]
 
@@ -21,5 +22,9 @@ debug_color = Color(0.941176, 0, 0.607843, 0.560784)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zone"]
 scale = Vector2(20, 20)
 shape = SubResource("CircleShape2D_ntt6p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_j406q")
+volume_db = -15.472
 
 [connection signal="area_entered" from="Zone" to="." method="_on_zone_area_entered"]

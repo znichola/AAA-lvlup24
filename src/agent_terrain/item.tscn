@@ -10,13 +10,7 @@ radius = 82.0549
 texture = ExtResource("1_0446c")
 script = ExtResource("2_o1cpg")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 100.0
-one_shot = true
-
 [node name="ItemArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemArea"]
 shape = SubResource("CircleShape2D_cfv6t")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
