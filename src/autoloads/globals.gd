@@ -23,6 +23,7 @@ func log_vet_message(data : PackedByteArray):
 	print(time, ":", d)
 
 static var director_story = [
+"..loading mission",
 "
 [b][Zone 0 - Home][/b]
 [i]> Eevy[/i]
@@ -74,6 +75,7 @@ Yes, yes, yes ! This is it ! Perfect ! Come on little robot, bring everything ba
 ]
 
 static var agent_story = [
+"..loading mission",
 "
 [b][Zone 0 - Home][/b]
 [i]> Agent[/i]

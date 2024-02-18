@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://pdk0evc7tts1"]
+[gd_scene load_steps=13 format=3 uid="uid://pdk0evc7tts1"]
 
 [ext_resource type="FontFile" uid="uid://fevchmg8dl77" path="res://assets/share/kode-mono/KodeMono-Regular.ttf" id="1_3d860"]
+[ext_resource type="Script" path="res://src/shared/text_box.gd" id="1_klcyg"]
 [ext_resource type="FontFile" uid="uid://dpxkv40cgxtf0" path="res://assets/share/kode-mono/KodeMono-Bold.ttf" id="2_22ptu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nc5o"]
@@ -101,6 +102,7 @@ spacing_bottom = 11
 
 [node name="TextBox" type="Node2D"]
 position = Vector2(-3, 4)
+script = ExtResource("1_klcyg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 15.0
