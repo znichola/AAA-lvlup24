@@ -112,7 +112,7 @@ editor_draw_limits = true
 script = ExtResource("1_3qvbt")
 
 [node name="PinsBox" type="Sprite2D" parent="."]
-position = Vector2(651, -389)
+position = Vector2(659, -380)
 scale = Vector2(0.569549, 0.569549)
 texture = ExtResource("8_yghvx")
 

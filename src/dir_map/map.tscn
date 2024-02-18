@@ -11,16 +11,3 @@ script = ExtResource("1_ws8jp")
 texture = ExtResource("2_1du1q")
 
 [node name="PinScene" parent="." instance=ExtResource("1_oyka2")]
-
-[node name="pins bin" type="Polygon2D" parent="."]
-position = Vector2(-625, -745)
-color = Color(1, 1, 1, 0.392157)
-polygon = PackedVector2Array(154, 800, 155, 594, 284, 585, 271, 917, 164, 938)
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = -447.0
-offset_top = -80.0
-offset_right = -346.0
-offset_bottom = 269.0
-text = "3-4 boxes with lots of pins of different colors
-"
