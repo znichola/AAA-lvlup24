@@ -56,11 +56,13 @@ It's okay, I'll ask the agent to find what I'll need. I won't be able to do anyt
 ",
 # object : car battery
 "
-[b]Zone D - Old survival camp[/b]
+[b]Zone C - Old survival camp[/b]
 [i]> Eevy[/i]
 Cheer up ! The agent has found the battery ! 
 [i]> Director[/i]
 Yes, yes, yes ! This is it ! Perfect ! Come on little robot, bring everything back home ! Eevy needs it ! This is enough to hold on for another year or two !
+[i]> Eevy[/i]
+...
 ",
 ]
 
@@ -83,16 +85,16 @@ As if they could do shit without me.
 [i]> Agent[/i]
 This place is freaking me out... I don't think the director can see it. Eevy is probably hiding them from the director. 
 She probably told them they ran away or something and I was the only one brave enough to stay. The truth is I am the only one who managed to snitch a new battery.
-Rest in peace siblings. May your soul- or whatever shit that gave us the ability to feel emotions- find peace. 
+All my siblings... May your soul- or whatever shit that gave us the ability to feel emotions- find peace. 
 ",
 # object : newspaper
 "
 [b][Zone B - Hospital][/b]
 [i]> Agent picked up a piece of newspaper[/i]
 [i]> Agent [/i]
-It's an article about Zealandia, written while this 8th continent was expanding at a critical rate. Humans knew about it for like... a decade preceding the incident and yet, they didn't cared enough.
+It's an article about Zealandia, written while it was expanding at a critical rate. Humans knew about it for like... a decade preceding the incident and, yet, they didn't cared enough.
 
-This place makes me sick. so many humans died here while hoping that modern science and medicine would be enough to save them from plastic poison. Which is kind of ironic since this same poison comes from their own evolution. 
+This place makes me sick. so many humans died here while hoping that modern science and medicine would be enough to save them from plastic poison.
 I could have save them. I was build as the solution to all those problemes but here I am gathering materials for an asshole who throws away twice as much as they get.
 The only shit they give is to keep Eevy alive. This is so unfair. It's been 4 years, 28 hours and 58 minutes and yet I didn't get to change anything.
 
@@ -105,15 +107,22 @@ What could you have done anyways ? A bunch of robots can't save the mess made by
 
 # object : car battery
 "
-[b]Zone D - 0ld survival camp[/b]
+[b]Zone C - 0ld survival camp[/b]
 [i]> Agent picked up a car battery[/i]
 [i]> Agent[/i]
 Oh shit. 
-[i]> Eevy[i]
+[i]> Eevy[/i]
 Please stop cussing.
-[i]> Agent[i]
+[i]> Agent[/i]
 01100110 01110101 01100011 01101011 00100000 01111001 01101111 01110101 01110010 01110011 01100101 01101100 01100110 01110100 00001010
-
+[i]> Eevy[/i]
+Not funny, didn't laugh. We have gather everything we needing, you can bring everything home now. 
+[i]> Agent[/i]
+There's a paper with a handwritten note next to it. It says something about survivors on the radio tower. The Director is not the last human left !
+[i]> Eevy [/i]
+This can't be. It's impossible.
+[i]> Agent[/i]
+Should I go there ?
 ",
 ]
 
