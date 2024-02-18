@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b61ywignrgouq"]
+[gd_scene load_steps=17 format=3 uid="uid://b61ywignrgouq"]
 
 [ext_resource type="Script" path="res://src/networking/server.gd" id="1_3qvbt"]
 [ext_resource type="Script" path="res://src/director/director.gd" id="1_fae6w"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://src/director/radar_to_map.gd" id="7_bj4cj"]
 [ext_resource type="Texture2D" uid="uid://8uoea2muv8dm" path="res://assets/dir/postit.png" id="8_4p0py"]
 [ext_resource type="PackedScene" uid="uid://cx1cpnsw463v3" path="res://src/director/button.tscn" id="8_j3hj7"]
+[ext_resource type="Texture2D" uid="uid://cev5rd33rw42n" path="res://assets/dir/pins_box.png" id="8_yghvx"]
 [ext_resource type="Shader" path="res://assets/share/diff.gdshader" id="9_cku3l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i13gq"]
@@ -97,6 +98,11 @@ editor_draw_limits = true
 
 [node name="Networking" type="Node" parent="."]
 script = ExtResource("1_3qvbt")
+
+[node name="PinsBox" type="Sprite2D" parent="."]
+position = Vector2(651, -389)
+scale = Vector2(0.569549, 0.569549)
+texture = ExtResource("8_yghvx")
 
 [node name="postits" type="Node2D" parent="."]
 
