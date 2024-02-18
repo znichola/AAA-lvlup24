@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b61ywignrgouq"]
+[gd_scene load_steps=18 format=3 uid="uid://b61ywignrgouq"]
 
 [ext_resource type="Script" path="res://src/networking/server.gd" id="1_3qvbt"]
 [ext_resource type="Script" path="res://src/director/director.gd" id="1_fae6w"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cx1cpnsw463v3" path="res://src/director/button.tscn" id="8_j3hj7"]
 [ext_resource type="Texture2D" uid="uid://cev5rd33rw42n" path="res://assets/dir/pins_box.png" id="8_yghvx"]
 [ext_resource type="Shader" path="res://assets/share/diff.gdshader" id="9_cku3l"]
+[ext_resource type="AudioStream" uid="uid://dfqdev7lv20nm" path="res://assets/sound/eevy_Dms_theme.mp3" id="12_rx051"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i13gq"]
 shader = ExtResource("9_cku3l")
@@ -77,7 +78,6 @@ offset_bottom = 759.0
 
 [node name="DirectorUi" type="Sprite2D" parent="."]
 position = Vector2(41.9999, 97)
-scale = Vector2(1, 1)
 texture = ExtResource("2_bbg4e")
 metadata/_edit_lock_ = true
 
@@ -222,7 +222,7 @@ rotation = -1.56524
 
 [node name="PathFollow2D" type="PathFollow2D" parent="radar_to_stats"]
 position = Vector2(-228, 43)
-rotation = -0.333881
+rotation = -0.33388
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="radar_to_stats/PathFollow2D"]
 remote_path = NodePath("../../../Camera2D")
@@ -250,6 +250,11 @@ rotation = -1.6675
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="stats_to_map/PathFollow2D"]
 remote_path = NodePath("../../../Camera2D")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_rx051")
+volume_db = -13.615
+autoplay = true
 
 [connection signal="api_rodot_pos_update" from="Networking" to="." method="_on_networking_api_rodot_pos_update"]
 [connection signal="pressed" from="radar_to_map/radar_to_map_btn" to="." method="_on_radar_to_map_btn_pressed"]

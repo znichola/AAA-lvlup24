@@ -1,9 +1,13 @@
 extends Node2D
 
 @onready var client_net = $Networking
+onready var theme_music = $AudioStreamPlayer
 
 var pos_data_to_transfer = null
 
+func _ready():
+	if !theme_music.is_playing():
+		theme_music.play()
 
 func _process(_delta):
 	if pos_data_to_transfer != null:

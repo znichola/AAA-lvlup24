@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cg2eocn0aoog1"]
+[gd_scene load_steps=9 format=3 uid="uid://cg2eocn0aoog1"]
 
 [ext_resource type="Script" path="res://src/agent/agent.gd" id="1_h7mfl"]
 [ext_resource type="Script" path="res://src/networking/client.gd" id="1_p0f3u"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://63whhija1ibe" path="res://assets/agent/robot_interface_background.png" id="2_d3u4v"]
 [ext_resource type="Shader" path="res://assets/share/start.gdshader" id="5_xlaie"]
 [ext_resource type="Texture2D" uid="uid://ob22n4qlngu" path="res://assets/agent/spritesheet.png" id="6_08ksw"]
+[ext_resource type="AudioStream" uid="uid://dq6yu8kpea5qd" path="res://assets/sound/wall-e_robots_theme.mp3" id="7_o0opa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3u47k"]
 shader = ExtResource("5_xlaie")
@@ -52,40 +53,6 @@ offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BTNvbox" type="VBoxContainer" parent="UI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 1.0
-offset_left = 25.0
-offset_right = 219.0
-grow_vertical = 2
-alignment = 1
-
-[node name="UpBTN" type="Button" parent="UI/BTNvbox"]
-layout_mode = 2
-text = "^"
-
-[node name="DownBTN" type="Button" parent="UI/BTNvbox"]
-layout_mode = 2
-text = "\\/"
-
-[node name="LeftBTN" type="Button" parent="UI/BTNvbox"]
-layout_mode = 2
-text = ">"
-
-[node name="RightBTN" type="Button" parent="UI/BTNvbox"]
-layout_mode = 2
-text = "<
-"
-
-[node name="PickupBTN" type="Button" parent="UI/BTNvbox"]
-layout_mode = 2
-text = "Pickup"
-
-[node name="SendPingBTN" type="Button" parent="UI/BTNvbox"]
-layout_mode = 2
-text = "Send Ping"
-
 [node name="AgentViewportContainer" type="SubViewportContainer" parent="UI"]
 layout_mode = 1
 anchors_preset = -1
@@ -103,6 +70,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="UI/AgentViewportContainer"]
 handle_input_locally = false
+audio_listener_enable_2d = true
 size = Vector2i(800, 800)
 render_target_update_mode = 4
 
@@ -115,12 +83,14 @@ texture = ExtResource("6_08ksw")
 hframes = 3
 
 [node name="Shader" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_3u47k")
 offset_right = 1152.0
 offset_bottom = 648.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_o0opa")
+volume_db = -15.884
+autoplay = true
+
 [connection signal="api_data_received" from="Networking" to="." method="_on_networking_api_data_received"]
-[connection signal="button_up" from="UI/BTNvbox/PickupBTN" to="Networking" method="_on_pickup_btn_button_up"]
-[connection signal="button_down" from="UI/BTNvbox/SendPingBTN" to="." method="_on_send_ping_btn_button_down"]
 [connection signal="api_move" from="UI/AgentViewportContainer/SubViewport/world" to="." method="_on_world_api_move"]

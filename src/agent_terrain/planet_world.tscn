@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7ivcx6esptyt"]
+[gd_scene load_steps=8 format=3 uid="uid://b7ivcx6esptyt"]
 
 [ext_resource type="PackedScene" uid="uid://bu7in63c5fakf" path="res://src/agent_robo/robo.tscn" id="1_ok4l4"]
 [ext_resource type="Texture2D" uid="uid://6tbh130alvpe" path="res://assets/agent/terrain.png" id="1_y2t65"]
 [ext_resource type="Script" path="res://src/agent_terrain/planet_world.gd" id="1_yhjlo"]
 [ext_resource type="PackedScene" uid="uid://c33h5d1t1wcwk" path="res://src/agent_terrain/item.tscn" id="2_kt22t"]
 [ext_resource type="PackedScene" uid="uid://b7e55fw2xrssd" path="res://src/agent_robo/interact_area.tscn" id="3_ccj50"]
+[ext_resource type="AudioStream" uid="uid://yhcmxreban5g" path="res://assets/sound/daisy_bell_bicycle_build_for_two_weird_cover_1.mp3" id="6_ol0u5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_disy3"]
 size = Vector2(23.7559, 19.7505)
@@ -13,10 +14,12 @@ size = Vector2(23.7559, 19.7505)
 script = ExtResource("1_yhjlo")
 
 [node name="Chara" parent="." instance=ExtResource("1_ok4l4")]
-position = Vector2(611, 849)
+position = Vector2(-607, -7334)
 
 [node name="Camera2D" type="Camera2D" parent="Chara"]
 zoom = Vector2(0.5, 0.5)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Chara"]
 
 [node name="Terrain" type="Sprite2D" parent="."]
 z_index = -50
@@ -127,5 +130,14 @@ position = Vector2(208.4, 257.4)
 rotation = -0.279253
 scale = Vector2(4, 8)
 shape = SubResource("RectangleShape2D_disy3")
+
+[node name="radio_daisy_bell_bicycle" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-357, -6245)
+stream = ExtResource("6_ol0u5")
+volume_db = -14.392
+autoplay = true
+max_distance = 5000.0
+attenuation = 1.03527
+panning_strength = 0.56
 
 [connection signal="api_move" from="Chara" to="." method="_on_chara_api_move"]
