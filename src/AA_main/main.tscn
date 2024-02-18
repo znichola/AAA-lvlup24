@@ -17,7 +17,7 @@ offset_left = 94.0
 offset_top = 584.0
 offset_right = 464.0
 offset_bottom = 615.0
-placeholder_text = "172.27.144.1"
+placeholder_text = "input your local ip address e.g 10.177.35.1"
 
 [node name="start_server" type="Button" parent="."]
 offset_left = 64.0
