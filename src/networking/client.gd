@@ -16,6 +16,15 @@ func _ready():
 		set_process(false)
 	else:
 		print("client connected with success")
+	
+	var callable = Callable(self, "on_global_story_advanced")
+	Global.connect("story_advanced", callable)
+
+
+func on_global_story_advanced():
+	print("story advanced callback")
+	api_send_data("story", "advanced")
+
 
 func _process(_delta):
 	socket.poll()
@@ -36,6 +45,7 @@ func _process(_delta):
 
 func _exit_tree():
 	socket.close()
+
 
 
 func api_send_data(property, data):

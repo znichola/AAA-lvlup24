@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://gk20tqos3goj"]
+
+[ext_resource type="PackedScene" uid="uid://c33h5d1t1wcwk" path="res://src/agent_terrain/item.tscn" id="1_8opb8"]
+
+[node name="StroyStars" type="Node2D"]
+
+[node name="1" parent="." instance=ExtResource("1_8opb8")]
+
+[node name="2" parent="." instance=ExtResource("1_8opb8")]
+
+[node name="3" parent="." instance=ExtResource("1_8opb8")]
+
+[node name="4" parent="." instance=ExtResource("1_8opb8")]

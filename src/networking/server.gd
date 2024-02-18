@@ -14,6 +14,7 @@ func _ready():
 		set_process(false)
 	print("srver started with success")
 
+
 func _process(_delta):
 	#Block while connecting? 
 	while tcp_server.is_connection_available():
@@ -34,6 +35,9 @@ func _process(_delta):
 				return
 			if data[0] == "robot-pos":
 				api_rodot_pos_update.emit(data[1])
+			if data[0] == "story":
+				print("story advanced to : ", Global.story_index)
+				Global.advance_story()
 
 
 func _exit_tree():

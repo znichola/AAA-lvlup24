@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal api_move
+signal api_interact(action: String)
 
 @export var MAX_SPEED = 400
 @export var ACCELERATION = 1500
@@ -12,15 +13,19 @@ signal api_move
 
 var item = preload("res://src/agent_terrain/item.tscn")
 
+
 func _physics_process(delta):
 	move(delta)
+
 
 func _process(_delta):
 	if Input.is_action_just_pressed("space"):
 		interact()
 
+
 func interact():
 	pass
+
 
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
@@ -34,6 +39,7 @@ func get_input_axis():
 		api_move.emit()
 	return axis.normalized()
 
+
 func move(delta):
 	axis = get_input_axis()
 	
@@ -44,11 +50,13 @@ func move(delta):
 	
 	move_and_slide()
 
+
 func apply_friction(fricc):
 	if velocity.length() > fricc:
 		velocity -= velocity.normalized() * fricc
 	else:
 		velocity = Vector2.ZERO
+
 
 func apply_movement(accel):
 	velocity += accel
@@ -56,11 +64,21 @@ func apply_movement(accel):
 
 
 func _on_zone_area_entered(area):
-	var t = area.InteractionType
-	if t == "item":
-		INVENTORY[0] = area.get_parent().ID
-		print(INVENTORY)
-		area.get_parent().queue_free()
-	elif t == "drop":
-		INVENTORY[0] = null
-		print(INVENTORY)
+	#very unsafe code! any area that does not have 
+	#this propety will be a null ptr de ref!
+	#var t = area.InteractionType 
+	if area.name == "ItemArea":
+		api_interact.emit("advance")
+		Global.advance_story()
+	
+	#if area.story_index == Global.story_index:
+		#Global.advance_story()
+		#if t == "item":
+			#INVENTORY[0] = area.get_parent().ID
+			#print(INVENTORY)
+			#area.get_parent().queue_free()
+			#api_interact.emit("item")
+		#elif t == "drop":
+			#INVENTORY[0] = null
+			#print(INVENTORY)
+			#api_interact.emit("drop")

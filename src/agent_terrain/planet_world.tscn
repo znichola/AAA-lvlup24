@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7ivcx6esptyt"]
+[gd_scene load_steps=6 format=3 uid="uid://b7ivcx6esptyt"]
 
 [ext_resource type="PackedScene" uid="uid://bu7in63c5fakf" path="res://src/agent_robo/robo.tscn" id="1_ok4l4"]
 [ext_resource type="Texture2D" uid="uid://6tbh130alvpe" path="res://assets/agent/terrain.png" id="1_y2t65"]
 [ext_resource type="Script" path="res://src/agent_terrain/planet_world.gd" id="1_yhjlo"]
 [ext_resource type="PackedScene" uid="uid://c33h5d1t1wcwk" path="res://src/agent_terrain/item.tscn" id="2_kt22t"]
-[ext_resource type="PackedScene" uid="uid://b7e55fw2xrssd" path="res://src/agent_robo/interact_area.tscn" id="3_ccj50"]
 [ext_resource type="AudioStream" uid="uid://yhcmxreban5g" path="res://assets/sound/daisy_bell_bicycle_build_for_two_weird_cover_1.mp3" id="6_ol0u5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_disy3"]
-size = Vector2(23.7559, 19.7505)
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_yhjlo")
@@ -30,7 +26,7 @@ texture = ExtResource("1_y2t65")
 [node name="Node" type="Node" parent="."]
 
 [node name="Item0" parent="Node" instance=ExtResource("2_kt22t")]
-position = Vector2(3089, -440)
+position = Vector2(1874, 416)
 ID = "Memory Bank"
 
 [node name="Item1" parent="Node" instance=ExtResource("2_kt22t")]
@@ -120,17 +116,6 @@ polygon = PackedVector2Array(-7061, -7708, -5967, -7888, -5696, -7652, -5196, -8
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls/Outer"]
 polygon = PackedVector2Array(5673, -943, 8421, 2311, 8386, 2458, 8482, 2696, 8669, 2765, 8685, 2798, 8481, 3437, 7981, 3751, 7709, 3848, 7477, 4003, 7476, 4188, 7933, 4663, 7924, 4979, 7623, 5387, 6990, 5443, 6781, 5614, 6715, 5802, 6757, 5877, 6711, 5920, 6709, 5985, 6483, 6139, 6332, 6409, 5947, 6461, 5383, 7023, 5418, 7342, 5335, 7731, 5521, 7803, 5998, 7571, 5866, 7324, 5886, 7053, 6323, 7074, 6779, 7019, 6975, 7619, 6894, 8152, 6489, 8595, 8752, 8596, 8752, -932)
 
-[node name="Central" parent="." instance=ExtResource("3_ccj50")]
-position = Vector2(-325, -1147)
-scale = Vector2(5, 5)
-InteractionType = "drop"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Central"]
-position = Vector2(208.4, 257.4)
-rotation = -0.279253
-scale = Vector2(4, 8)
-shape = SubResource("RectangleShape2D_disy3")
-
 [node name="radio_daisy_bell_bicycle" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-357, -6245)
 stream = ExtResource("6_ol0u5")
@@ -140,4 +125,5 @@ max_distance = 5000.0
 attenuation = 1.03527
 panning_strength = 0.56
 
+[connection signal="api_interact" from="Chara" to="." method="_on_chara_api_interact"]
 [connection signal="api_move" from="Chara" to="." method="_on_chara_api_move"]

@@ -110,4 +110,5 @@ autoplay = true
 
 [connection signal="api_data_received" from="Networking" to="." method="_on_networking_api_data_received"]
 [connection signal="api_power_toggle" from="Networking" to="." method="_on_networking_api_power_toggle"]
+[connection signal="api_interact" from="UI/AgentViewportContainer/SubViewport/world" to="." method="_on_world_api_interact"]
 [connection signal="api_move" from="UI/AgentViewportContainer/SubViewport/world" to="." method="_on_world_api_move"]

@@ -6,6 +6,7 @@ extends Node2D
 
 var pos_data_to_transfer = null
 
+
 func _ready():
 	if !theme_music.is_playing():
 		theme_music.play()
@@ -25,6 +26,11 @@ func _on_world_api_move(pos):
 		#client_net.api_send_data("position", pos)
 
 
+func _on_world_api_interact(action):
+	print("new interaction recorded")
+	client_net.api_send_data("story", "advanced")
+
+
 func _on_send_ping_btn_button_down():
 	client_net.api_send_data()
 	#client_net.api_send_data("position", pos)
@@ -32,3 +38,4 @@ func _on_send_ping_btn_button_down():
 
 func _on_networking_api_power_toggle(pow):
 	powered_standby.visible = !pow
+

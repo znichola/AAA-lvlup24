@@ -1,6 +1,7 @@
 extends Node2D
 
 signal api_move(pos: Vector2)
+signal api_interact(action: String)
 
 @onready var chara = $"Chara"
 @onready var radio = $radio_daisy_bell_bicycle
@@ -18,3 +19,7 @@ func _process(_delta):
 
 func _on_chara_api_move():
 	api_move.emit(chara.position)
+
+
+func _on_chara_api_interact(action):
+	api_interact.emit(action)

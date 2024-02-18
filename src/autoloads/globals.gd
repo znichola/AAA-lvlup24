@@ -3,8 +3,15 @@ extends Node
 var host_ip = ""
 static var IDs = ["Scrap", "CPU", "Old Fan", "Memory Bank", "SLK-655"]
 
-
 var robot_power = false
+
+var story_index = 0
+
+signal story_advanced
+
+func advance_story():
+	story_index += 1
+	#log_message("story advanced to: " + str(story_index))
 
 func log_message(message):
 	var time = "%s" % Time.get_time_string_from_system()
